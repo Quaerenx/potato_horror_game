@@ -12,6 +12,9 @@ const FINAL_ESCAPE_Y := -640.0
 const FINAL_ESCAPE_LEFT_X := -145.0
 const FINAL_ESCAPE_RIGHT_X := 145.0
 const FINAL_CHASE_START_GAP := 320.0
+const FIRST_CHASE_START_GAP := 260.0
+const STREETLIGHT_GLIMPSE_POSITION := Vector2(-118, -248)
+const EVENT_TRIGGER_WIDTH := 900.0
 
 var player: PlayerCharacter
 var enemy: EnemyChase
@@ -65,7 +68,7 @@ func _spawn_actors() -> void:
 	camera.enabled = true
 	camera.zoom = Vector2(1.15, 1.15)
 	player.add_child(camera)
-	enemy.global_position = Vector2(0, -238)
+	enemy.global_position = STREETLIGHT_GLIMPSE_POSITION
 	enemy.stop_chase()
 
 func _spawn_ui() -> void:
@@ -80,8 +83,9 @@ func _build_world() -> void:
 	_add_rect("DenseFoliageBase", Vector2(-380, -340), Vector2(430, 1900), Color(0.025, 0.075, 0.035, 1.0), false)
 	_add_rect("Sidewalk", Vector2(188, -340), Vector2(92, 1900), Color(0.14, 0.14, 0.13, 1.0), false)
 	_add_rect("CarRoad", Vector2(340, -340), Vector2(210, 1900), Color(0.055, 0.058, 0.065, 1.0), false)
-	_add_rect("LeftFoliageWall", Vector2(-220, -340), Vector2(50, 1900), Color(0.02, 0.055, 0.025, 1.0), true)
-	_add_rect("RoadEdgeWall", Vector2(250, -340), Vector2(26, 1900), Color(0.09, 0.09, 0.085, 1.0), true)
+	_add_rect("LeftFoliageWall", Vector2(-286, -340), Vector2(42, 1900), Color(0.02, 0.055, 0.025, 1.0), true)
+	_add_rect("RoadEdgeMarker", Vector2(250, -340), Vector2(14, 1900), Color(0.09, 0.09, 0.085, 0.78), false)
+	_add_rect("RightRoadBoundary", Vector2(488, -340), Vector2(52, 1900), Color(0.035, 0.038, 0.045, 1.0), true)
 	_add_dense_foliage()
 	_add_safety_fence()
 	_add_rect("Home", Vector2(0, 510), Vector2(230, 130), Color(0.32, 0.23, 0.20, 1.0), true)
@@ -92,24 +96,27 @@ func _build_world() -> void:
 	_add_store_lighting(Vector2(0, -660))
 	_add_store_sprite(Vector2(0, -735))
 	_add_store_clues()
+	_add_payphone(Vector2(-152, -612))
+	_add_store_clue_glints()
 	_add_rect("ConvenienceStoreCollision", Vector2(0, -725), Vector2(235, 120), Color(0.55, 0.62, 0.70, 0.0), true)
 	_add_store_door_glow(Vector2(0, -642))
 	_add_rect("RescueRoad", Vector2(0, -1110), Vector2(360, 140), Color(0.12, 0.12, 0.13, 1.0), false)
 	_add_world_label("집", Vector2(-12, 445))
 	_add_world_label("편의점", Vector2(-42, -785))
-	_add_interaction("home_door", Vector2(0, 430), 48.0)
-	_add_interaction("fridge", Vector2(-80, 510), 38.0)
-	_add_interaction("mailbox", Vector2(95, 385), 34.0)
-	_add_store_door(Vector2(0, -640), 54.0)
-	_add_interaction("store_receipt", Vector2(-76, -594), 30.0)
-	_add_interaction("store_footprints", Vector2(58, -585), 42.0)
-	_add_interaction("store_window", Vector2(78, -706), 36.0)
-	_add_interaction("store_sensor", Vector2(0, -666), 28.0)
-	_add_trigger("ambient_dog_bark", Vector2(0, 20), Vector2(320, 80), WALK_TO_STORE)
-	_add_trigger("streetlight_glimpse", Vector2(0, -235), Vector2(320, 58), WALK_TO_STORE)
-	_add_trigger("first_chase", Vector2(0, -340), Vector2(320, 80), WALK_TO_STORE)
-	_add_trigger("store_arrival", Vector2(0, -555), Vector2(320, 80), SPRAY_USED)
-	_add_trigger("rescue_zone", Vector2(0, -1040), Vector2(320, 120), FINAL_CHASE)
+	_add_interaction("home_door", Vector2(0, 430), 68.0, "문 열기")
+	_add_interaction("fridge", Vector2(-80, 510), 58.0, "냉장고 확인")
+	_add_interaction("mailbox", Vector2(95, 385), 58.0, "우편함 확인")
+	_add_store_door(Vector2(0, -640), 78.0, "편의점 문 조사")
+	_add_interaction("store_receipt", Vector2(-76, -594), 68.0, "영수증 확인")
+	_add_interaction("store_footprints", Vector2(58, -585), 74.0, "발자국 확인")
+	_add_interaction("store_window", Vector2(78, -706), 76.0, "창문 확인")
+	_add_interaction("store_sensor", Vector2(0, -666), 68.0, "센서 확인")
+	_add_interaction("store_payphone", Vector2(-152, -612), 76.0, "공중전화 받기")
+	_add_trigger("ambient_dog_bark", Vector2(0, 20), Vector2(EVENT_TRIGGER_WIDTH, 80), WALK_TO_STORE)
+	_add_trigger("streetlight_glimpse", Vector2(0, -235), Vector2(EVENT_TRIGGER_WIDTH, 58), WALK_TO_STORE)
+	_add_trigger("first_chase", Vector2(0, -340), Vector2(EVENT_TRIGGER_WIDTH, 80), WALK_TO_STORE)
+	_add_trigger("store_arrival", Vector2(0, -555), Vector2(EVENT_TRIGGER_WIDTH, 80), SPRAY_USED)
+	_add_trigger("rescue_zone", Vector2(0, -1040), Vector2(EVENT_TRIGGER_WIDTH, 120), FINAL_CHASE)
 
 func _add_rect(name: String, position: Vector2, size: Vector2, color: Color, collision: bool) -> Node2D:
 	var visual := Polygon2D.new()
@@ -261,6 +268,25 @@ func _add_store_clues() -> void:
 	_add_rect("StoreCounterShadow", Vector2(18, -690), Vector2(58, 15), Color(0.02, 0.018, 0.014, 0.34), false)
 	store_sensor_light = _add_ellipse("AutoDoorSensorBlink", Vector2(0, -666), Vector2(14, 5), Color(0.95, 0.18, 0.12, 0.72), 18)
 
+func _add_payphone(position: Vector2) -> void:
+	_add_rect("PayphoneShadow", position + Vector2(8, 26), Vector2(58, 14), Color(0.02, 0.018, 0.02, 0.42), false)
+	_add_rect("PayphoneBody", position, Vector2(42, 68), Color(0.10, 0.16, 0.23, 1.0), false)
+	_add_rect("PayphoneGlass", position + Vector2(0, -10), Vector2(30, 26), Color(0.35, 0.58, 0.70, 0.34), false)
+	_add_rect("PayphonePanel", position + Vector2(0, 18), Vector2(28, 18), Color(0.045, 0.055, 0.065, 1.0), false)
+	_add_ellipse("PayphoneReceiver", position + Vector2(-10, 12), Vector2(5, 12), Color(0.018, 0.018, 0.020, 1.0), 12)
+	_add_ellipse("PayphoneRedLamp", position + Vector2(14, -30), Vector2(5, 5), Color(0.95, 0.10, 0.08, 0.78), 14)
+
+func _add_store_clue_glints() -> void:
+	_add_clue_glint("ReceiptClueGlint", Vector2(-76, -594))
+	_add_clue_glint("FootprintsClueGlint", Vector2(58, -585))
+	_add_clue_glint("WindowClueGlint", Vector2(78, -706))
+	_add_clue_glint("SensorClueGlint", Vector2(0, -666))
+	_add_clue_glint("PayphoneClueGlint", Vector2(-152, -612))
+
+func _add_clue_glint(name: String, position: Vector2) -> void:
+	_add_ellipse(name + "Outer", position, Vector2(26, 26), Color(0.88, 0.96, 1.0, 0.12), 18)
+	_add_ellipse(name + "Inner", position, Vector2(7, 7), Color(0.86, 0.95, 1.0, 0.50), 12)
+
 func _add_store_door_glow(position: Vector2) -> void:
 	_add_ellipse("StoreDoorGlowSoft", position + Vector2(0, 10), Vector2(58, 22), Color(0.68, 0.88, 1.0, 0.16), 24)
 	_add_polygon("StoreDoorLightStripe", position, PackedVector2Array([
@@ -330,20 +356,24 @@ func _run_tension_event(stage: int) -> void:
 			manager.show_hint("아까의 발소리가 갑자기 끊겼다.")
 			_audio().play_sfx("distant_step")
 		STORE_REACHED:
-			var store_event := tension_rng.randi_range(0, 1)
+			var store_event := tension_rng.randi_range(0, 2)
 			if store_event == 0:
 				manager.show_hint("자동문 센서가 혼자 깜빡인다.")
 				_audio().play_sfx("auto_door")
-			else:
+			elif store_event == 1:
 				manager.show_hint("편의점 안쪽 TV 화면만 푸르게 흔들린다.")
 				_audio().play_sfx("fluorescent")
+			else:
+				manager.show_hint("공중전화가 한 번 울리다 멈춘다.")
+				_audio().play_sfx("phone_ring")
 		FINAL_CHASE:
 			manager.show_hint("숨소리가 귓가에 바짝 붙는다.")
 			_audio().play_sfx("heartbeat")
 
-func _add_interaction(id: String, position: Vector2, radius: float) -> void:
+func _add_interaction(id: String, position: Vector2, radius: float, prompt_text := "조사하기") -> void:
 	var area := InteractionArea.new()
 	area.interaction_id = id
+	area.prompt = prompt_text
 	area.position = position
 	var shape_node := CollisionShape2D.new()
 	var shape := CircleShape2D.new()
@@ -352,9 +382,10 @@ func _add_interaction(id: String, position: Vector2, radius: float) -> void:
 	area.add_child(shape_node)
 	add_child(area)
 
-func _add_store_door(position: Vector2, radius: float) -> void:
+func _add_store_door(position: Vector2, radius: float, prompt_text := "편의점 문 조사") -> void:
 	var door := ConvenienceStoreDoor.new()
 	door.interaction_id = "store_door"
+	door.prompt = prompt_text
 	door.position = position
 	var shape_node := CollisionShape2D.new()
 	var shape := CircleShape2D.new()
@@ -379,7 +410,7 @@ func _add_trigger(id: String, position: Vector2, size: Vector2, required_stage: 
 func run_streetlight_glimpse() -> void:
 	if _gm().stage != WALK_TO_STORE or not is_instance_valid(enemy):
 		return
-	enemy.global_position = Vector2(0, -238)
+	enemy.global_position = STREETLIGHT_GLIMPSE_POSITION
 	enemy.show_waiting_silhouette()
 	_audio().play_sfx("streetlight")
 	if is_instance_valid(camera):
@@ -390,11 +421,17 @@ func run_streetlight_glimpse() -> void:
 
 func prepare_first_chase() -> void:
 	_gm().set_checkpoint("CP_1", Vector2(0, -130), WALK_TO_STORE)
-	enemy.global_position = Vector2(0, -238)
+	enemy.global_position = _get_first_chase_spawn_position()
 	enemy.visible = true
 	_audio().play_sfx("streetlight")
 	if is_instance_valid(camera):
 		camera.shake(0.35, 6.0)
+
+func _get_first_chase_spawn_position() -> Vector2:
+	if not is_instance_valid(player):
+		return Vector2(0, -80)
+	var spawn_x := clampf(player.global_position.x, -130.0, 130.0)
+	return Vector2(spawn_x, player.global_position.y + FIRST_CHASE_START_GAP)
 
 func prepare_final_chase() -> void:
 	var escape_position := _get_final_chase_escape_position()

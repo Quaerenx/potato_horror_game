@@ -5,6 +5,7 @@ const CHARACTER_VISUAL_SCALE := 0.33
 const CELL_SIZE := Vector2(192, 208)
 const SHEET_PATH := "res://assets/source/characters/hero_spritesheet.webp"
 const FOOTSTEP_INTERVAL := 0.34
+const INTERACTION_DETECTOR_RADIUS := 82.0
 
 @export var walk_speed := 105.0
 @export var sprint_speed := 165.0
@@ -12,7 +13,9 @@ const FOOTSTEP_INTERVAL := 0.34
 var sprite: AnimatedSprite2D
 var interaction_detector: Area2D
 var spray_controller: SprayController
-var current_interactable: Node
+var current_interactable: Area2D
+var nearby_interactables: Array[Area2D] = []
+var last_prompt_text := ""
 var last_direction := Vector2.UP
 var footstep_timer := 0.0
 
@@ -47,6 +50,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	_update_animation(direction)
 	_update_footsteps(direction, _delta)
+	_refresh_current_interactable(not locked and not in_dialogue)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.echo:
@@ -57,6 +61,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			dialogue.advance()
 		elif is_instance_valid(current_interactable) and current_interactable.has_method("interact"):
 			current_interactable.interact(self)
+		else:
+			var manager := _game_manager()
+			if manager != null:
+				manager.show_hint("조사할 수 있는 대상에 조금 더 가까이 가자.")
 	elif event.is_action_pressed("spray"):
 		if is_instance_valid(spray_controller):
 			spray_controller.try_use()
@@ -108,7 +116,7 @@ func _build_interaction_detector() -> void:
 	interaction_detector.name = "InteractionDetector"
 	var shape := CollisionShape2D.new()
 	var circle := CircleShape2D.new()
-	circle.radius = 42.0
+	circle.radius = INTERACTION_DETECTOR_RADIUS
 	shape.shape = circle
 	interaction_detector.add_child(shape)
 	interaction_detector.area_entered.connect(_on_interaction_area_entered)
@@ -175,11 +183,44 @@ func _update_footsteps(direction: Vector2, delta: float) -> void:
 
 func _on_interaction_area_entered(area: Area2D) -> void:
 	if area.is_in_group("interactable"):
-		current_interactable = area
+		if not nearby_interactables.has(area):
+			nearby_interactables.append(area)
+		_refresh_current_interactable()
 
 func _on_interaction_area_exited(area: Area2D) -> void:
-	if current_interactable == area:
-		current_interactable = null
+	nearby_interactables.erase(area)
+	_refresh_current_interactable()
+
+func _refresh_current_interactable(show_prompt := true) -> void:
+	var best_area: Area2D
+	var best_distance := 999999999.0
+	for area in nearby_interactables.duplicate():
+		if not is_instance_valid(area) or not area.is_inside_tree() or not area.is_in_group("interactable"):
+			nearby_interactables.erase(area)
+			continue
+		var distance := global_position.distance_squared_to(area.global_position)
+		if distance < best_distance:
+			best_distance = distance
+			best_area = area
+	current_interactable = best_area
+	_update_interaction_prompt(show_prompt)
+
+func _update_interaction_prompt(show_prompt: bool) -> void:
+	var prompt_text := ""
+	if show_prompt and is_instance_valid(current_interactable):
+		prompt_text = "E: " + _get_interactable_prompt(current_interactable)
+	if prompt_text == last_prompt_text:
+		return
+	last_prompt_text = prompt_text
+	var manager := _game_manager()
+	if manager != null and manager.has_method("set_interaction_prompt"):
+		manager.set_interaction_prompt(prompt_text)
+
+func _get_interactable_prompt(area: Area2D) -> String:
+	var prompt_value = area.get("prompt")
+	if typeof(prompt_value) == TYPE_STRING and not str(prompt_value).is_empty():
+		return str(prompt_value)
+	return "조사하기"
 
 func _game_manager() -> Node:
 	return get_node_or_null("/root/GameManager")

@@ -173,6 +173,59 @@
 - Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
 - Issues: Manual playtest is still recommended to tune how often tension hints appear and how noticeable the short streetlight glimpse is.
 
+## Checkpoint 16 — Chase spawn and dark-road passability fix
+- Done: Moved the first-chase spawn to a safe distance behind the player's current position instead of reusing the streetlight reveal position.
+- Done: Added a short chase-start grace window before creature capture checks become active, preventing immediate game over as the chase begins.
+- Done: Moved hard road boundaries outward and changed the old road-edge blocker into a visual-only marker so unlit road sections remain walkable.
+- Done: Widened event trigger areas so first chase, store arrival, and rescue still fire when the player uses the darker side of the road.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `python verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Issues: Manual playtest is recommended to tune the exact first-chase distance and road feel.
+
+## Checkpoint 17 — 5+ minute story expansion and eerie BGM
+- Done: Added a `STORY_EXTENSION_PLAN.md` story outline for a 5+ minute version that keeps the original home-night road-store-chase-rescue arc.
+- Done: Converted the convenience store into a required investigation sequence with five clues: receipt, footprints, CCTV window, auto-door sensor, and payphone.
+- Done: Updated `GameManager` so the locked-door final chase only starts after all five store clues are inspected.
+- Done: Added a procedural payphone prop and interaction near the store.
+- Done: Rewrote the dialogue data with readable Korean and longer horror beats around the false-safe convenience store.
+- Done: Added generated eerie drone BGM through `AudioStreamGenerator`, with higher intensity during the final chase and fade-down at rescue/ending.
+- Verified: `python -m json.tool data/dialogues.json` passed.
+- Verified: `python -m json.tool data/game_config.json` passed.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `python verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Issues: Manual playtest is still needed to confirm the real reading/exploration pace lands above 5 minutes.
+
+## Checkpoint 18 — Story clarity and completeness pass
+- Done: Added clue labels and HUD objective text showing exact store clue progress and the next missing clue.
+- Done: Added small blue clue glints for all five store investigation targets to reduce frustrating pixel-hunting.
+- Done: Prevented store-door interaction from opening a dialogue during the final chase; it now keeps the player focused on running to the car.
+- Done: Restored BGM intensity by checkpoint stage after game over, so failed final chases no longer leave the store checkpoint at full chase tension.
+- Done: Increased generated SFX buffer length so longer cues like the payphone ring are not cut short.
+- Done: Updated validation checks to cover clue glints, clue labels, chase-door guard, BGM stage restore, and the longer SFX buffer.
+- Verified: `python -m json.tool data/dialogues.json` passed.
+- Verified: `python -m json.tool data/game_config.json` passed.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `python verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Issues: Headless validation still prints a non-blocking ObjectDB leak warning on exit; manual editor playtest remains needed for pacing and audio taste.
+
+## Checkpoint 19 — Interaction usability pass
+- Done: Increased the player interaction detector radius from 42px to 82px.
+- Done: Reworked interaction targeting so the closest nearby interactable is selected, instead of whichever area most recently fired an enter event.
+- Done: Added a persistent HUD prompt such as `E: 영수증 확인` while the player is in range of a clue or door.
+- Done: Enlarged clue/door interaction radii and assigned clear Korean prompt text to the home, store, and investigation objects.
+- Done: Increased clue glint size and opacity so investigation objects are easier to notice without changing the horror pacing.
+- Done: Updated validation to cover the new interaction targeting and prompt infrastructure.
+- Verified: `python -m json.tool data/dialogues.json` passed.
+- Verified: `python -m json.tool data/game_config.json` passed.
+- Verified: `python verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: `git diff --check` found no whitespace errors; it only reported existing Windows line-ending warnings.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Issues: A short headless scene run still exits with the existing non-blocking ObjectDB leak warning, so manual feel testing in the editor is recommended.
+
 ## Final Summary
 - Implemented: First playable project structure, main scene, player movement, sprint, collision, camera follow, HUD, dialogue UI, interactions, triggers, first chase, one-use spray, locked store reversal, final chase, game over checkpoint restore, boyfriend car rescue, ending screen, asset lock, and validation scripts.
 - Implemented later: New potato-style car, nightmare creature, generated convenience store sprite, left dense foliage, right safety fence, and car-road visual separation.

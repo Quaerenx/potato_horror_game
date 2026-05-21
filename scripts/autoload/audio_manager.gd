@@ -1,8 +1,17 @@
 extends Node
 
 const MIX_RATE := 22050
+const BGM_BUFFER_LENGTH := 1.4
 
 var sfx_players := {}
+var bgm_player: AudioStreamPlayer
+var bgm_playback
+var bgm_phase_low := 0.0
+var bgm_phase_mid := 0.0
+var bgm_phase_high := 0.0
+var bgm_phase_pulse := 0.0
+var bgm_intensity := 0.55
+var bgm_target_intensity := 0.55
 var sfx_specs := {
 	"footstep": {"duration": 0.055, "frequency": 95.0, "volume": 0.11, "noise": 0.45},
 	"spray": {"duration": 0.18, "frequency": 820.0, "volume": 0.16, "noise": 0.70},
@@ -19,6 +28,7 @@ var sfx_specs := {
 	"fluorescent": {"duration": 0.32, "frequency": 960.0, "volume": 0.065, "noise": 0.16},
 	"auto_door": {"duration": 0.20, "frequency": 620.0, "volume": 0.09, "noise": 0.06},
 	"heartbeat": {"duration": 0.28, "frequency": 58.0, "volume": 0.14, "noise": 0.12},
+	"phone_ring": {"duration": 0.70, "frequency": 520.0, "volume": 0.12, "noise": 0.03},
 }
 
 func _ready() -> void:
@@ -27,10 +37,25 @@ func _ready() -> void:
 		player.name = "Sfx_" + str(sfx_name)
 		var stream := AudioStreamGenerator.new()
 		stream.mix_rate = MIX_RATE
-		stream.buffer_length = 0.6
+		stream.buffer_length = 0.9
 		player.stream = stream
 		add_child(player)
 		sfx_players[sfx_name] = player
+	_build_bgm_player()
+
+func _process(delta: float) -> void:
+	bgm_intensity = lerpf(bgm_intensity, bgm_target_intensity, minf(1.0, delta * 1.6))
+	_fill_bgm_buffer()
+
+func set_bgm_intensity(value: float) -> void:
+	bgm_target_intensity = clampf(value, 0.0, 1.0)
+
+func _exit_tree() -> void:
+	if is_instance_valid(bgm_player):
+		bgm_player.stop()
+	for player in sfx_players.values():
+		if is_instance_valid(player):
+			player.stop()
 
 func play_sfx(name: String) -> void:
 	if not sfx_players.has(name):
@@ -61,3 +86,38 @@ func _write_generated_sfx(playback, spec: Dictionary) -> void:
 		var noise := randf_range(-1.0, 1.0) * noise_amount
 		var sample := (tone + overtone + noise) * envelope * volume
 		playback.push_frame(Vector2(sample, sample))
+
+func _build_bgm_player() -> void:
+	bgm_player = AudioStreamPlayer.new()
+	bgm_player.name = "Bgm_EerieDrone"
+	bgm_player.volume_db = -10.0
+	var stream := AudioStreamGenerator.new()
+	stream.mix_rate = MIX_RATE
+	stream.buffer_length = BGM_BUFFER_LENGTH
+	bgm_player.stream = stream
+	add_child(bgm_player)
+	bgm_player.play()
+	bgm_playback = bgm_player.get_stream_playback()
+	_fill_bgm_buffer()
+
+func _fill_bgm_buffer() -> void:
+	if bgm_playback == null:
+		return
+	var frames_available: int = bgm_playback.get_frames_available()
+	for _frame in range(frames_available):
+		var sample := _next_bgm_sample()
+		bgm_playback.push_frame(Vector2(sample, sample))
+
+func _next_bgm_sample() -> float:
+	var low := sin(bgm_phase_low) * 0.11
+	var mid := sin(bgm_phase_mid) * 0.045
+	var high := sin(bgm_phase_high) * 0.018
+	var pulse := 0.62 + 0.38 * sin(bgm_phase_pulse)
+	var noise := randf_range(-1.0, 1.0) * 0.012
+	var intensity := 0.18 + bgm_intensity * 0.82
+	var sample := (low + mid + high + noise) * pulse * intensity
+	bgm_phase_low = fmod(bgm_phase_low + TAU * 43.0 / MIX_RATE, TAU)
+	bgm_phase_mid = fmod(bgm_phase_mid + TAU * 51.7 / MIX_RATE, TAU)
+	bgm_phase_high = fmod(bgm_phase_high + TAU * 96.3 / MIX_RATE, TAU)
+	bgm_phase_pulse = fmod(bgm_phase_pulse + TAU * (0.055 + bgm_intensity * 0.035) / MIX_RATE, TAU)
+	return sample

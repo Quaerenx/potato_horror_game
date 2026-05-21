@@ -8,6 +8,7 @@ const CREATURE_ATLAS_PATH := "res://assets/source/creatures/nightmare-creature-m
 const CREATURE_VISUAL_SCALE := 0.22
 const CELL_SIZE := Vector2(448, 640)
 const CATCH_BACKUP_DISTANCE := 18.0
+const CHASE_START_GRACE_TIME := 0.75
 
 var target: Node2D
 var active := false
@@ -15,6 +16,7 @@ var final_mode := false
 var creature_sprite: AnimatedSprite2D
 var catch_area: Area2D
 var silhouette_mode := false
+var catch_grace_timer := 0.0
 
 func _ready() -> void:
 	collision_layer = 0
@@ -31,14 +33,16 @@ func start_chase(is_final: bool) -> void:
 	final_mode = is_final
 	active = true
 	visible = true
+	catch_grace_timer = CHASE_START_GRACE_TIME
 	if is_instance_valid(catch_area):
-		catch_area.monitoring = true
+		catch_area.monitoring = false
 	set_silhouette_mode(false)
 	_play_animation("charge-towards")
 
 func stop_chase() -> void:
 	active = false
 	velocity = Vector2.ZERO
+	catch_grace_timer = 0.0
 	visible = false
 	if is_instance_valid(catch_area):
 		catch_area.monitoring = false
@@ -87,12 +91,16 @@ func stunned_by_spray() -> void:
 	if manager != null:
 		manager.finish_first_chase()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not active or not is_instance_valid(target):
 		velocity = Vector2.ZERO
 		return
+	if catch_grace_timer > 0.0:
+		catch_grace_timer = maxf(0.0, catch_grace_timer - delta)
+		if catch_grace_timer <= 0.0 and is_instance_valid(catch_area):
+			catch_area.monitoring = true
 	var to_target := target.global_position - global_position
-	if to_target.length() <= CATCH_BACKUP_DISTANCE:
+	if catch_grace_timer <= 0.0 and to_target.length() <= CATCH_BACKUP_DISTANCE:
 		_catch_player()
 		return
 	var speed := final_chase_speed if final_mode else first_chase_speed
@@ -160,7 +168,7 @@ func _build_catch_area() -> void:
 	add_child(catch_area)
 
 func _on_catch_area_body_entered(body: Node) -> void:
-	if not active or not body.is_in_group("player"):
+	if not active or catch_grace_timer > 0.0 or not body.is_in_group("player"):
 		return
 	_catch_player()
 
