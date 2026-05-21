@@ -23,6 +23,11 @@ var streetlight_glow_layers: Array[Polygon2D] = []
 var streetlight_lamp: Polygon2D
 var streetlight_lamp_bloom: Polygon2D
 var streetlight_flicker_phase := 0.0
+var store_sensor_light: Polygon2D
+var store_tv_glow: Polygon2D
+var store_light_phase := 0.0
+var tension_timer := 3.5
+var tension_rng := RandomNumberGenerator.new()
 
 const WALK_TO_STORE := 1
 const SPRAY_USED := 3
@@ -30,6 +35,7 @@ const STORE_REACHED := 4
 const FINAL_CHASE := 5
 
 func _ready() -> void:
+	tension_rng.randomize()
 	_gm().register_main(self)
 	_dm().load_dialogues()
 	_build_world()
@@ -60,7 +66,7 @@ func _spawn_actors() -> void:
 	camera.zoom = Vector2(1.15, 1.15)
 	player.add_child(camera)
 	enemy.global_position = Vector2(0, -238)
-	enemy.show_waiting_silhouette()
+	enemy.stop_chase()
 
 func _spawn_ui() -> void:
 	add_child(HudScene.instantiate())
@@ -85,6 +91,7 @@ func _build_world() -> void:
 	_add_rect("Bridge", Vector2(0, -430), Vector2(320, 52), Color(0.18, 0.17, 0.15, 1.0), false)
 	_add_store_lighting(Vector2(0, -660))
 	_add_store_sprite(Vector2(0, -735))
+	_add_store_clues()
 	_add_rect("ConvenienceStoreCollision", Vector2(0, -725), Vector2(235, 120), Color(0.55, 0.62, 0.70, 0.0), true)
 	_add_store_door_glow(Vector2(0, -642))
 	_add_rect("RescueRoad", Vector2(0, -1110), Vector2(360, 140), Color(0.12, 0.12, 0.13, 1.0), false)
@@ -94,7 +101,12 @@ func _build_world() -> void:
 	_add_interaction("fridge", Vector2(-80, 510), 38.0)
 	_add_interaction("mailbox", Vector2(95, 385), 34.0)
 	_add_store_door(Vector2(0, -640), 54.0)
+	_add_interaction("store_receipt", Vector2(-76, -594), 30.0)
+	_add_interaction("store_footprints", Vector2(58, -585), 42.0)
+	_add_interaction("store_window", Vector2(78, -706), 36.0)
+	_add_interaction("store_sensor", Vector2(0, -666), 28.0)
 	_add_trigger("ambient_dog_bark", Vector2(0, 20), Vector2(320, 80), WALK_TO_STORE)
+	_add_trigger("streetlight_glimpse", Vector2(0, -235), Vector2(320, 58), WALK_TO_STORE)
 	_add_trigger("first_chase", Vector2(0, -340), Vector2(320, 80), WALK_TO_STORE)
 	_add_trigger("store_arrival", Vector2(0, -555), Vector2(320, 80), SPRAY_USED)
 	_add_trigger("rescue_zone", Vector2(0, -1040), Vector2(320, 120), FINAL_CHASE)
@@ -231,6 +243,24 @@ func _add_store_lighting(position: Vector2) -> void:
 	_add_rect("StoreWindowGlowLeft", position + Vector2(-76, -24), Vector2(58, 24), Color(1.0, 0.90, 0.56, 0.22), false)
 	_add_rect("StoreWindowGlowRight", position + Vector2(76, -24), Vector2(58, 24), Color(1.0, 0.90, 0.56, 0.20), false)
 
+func _add_store_clues() -> void:
+	_add_polygon("DroppedReceipt", Vector2(-76, -594), PackedVector2Array([
+		Vector2(-15, -10),
+		Vector2(18, -6),
+		Vector2(12, 13),
+		Vector2(-18, 8),
+	]), Color(0.86, 0.83, 0.70, 0.94))
+	_add_line("ReceiptInkA", PackedVector2Array([Vector2(-88, -595), Vector2(-66, -592)]), Color(0.15, 0.14, 0.12, 0.5), 1.5)
+	_add_line("ReceiptInkB", PackedVector2Array([Vector2(-86, -589), Vector2(-70, -587)]), Color(0.15, 0.14, 0.12, 0.36), 1.0)
+	for index in range(5):
+		var y := -628 + index * 18
+		var x := 34 + (index % 2) * 24
+		_add_ellipse("StoreFootprint%d" % index, Vector2(x, y), Vector2(7, 12), Color(0.04, 0.035, 0.03, 0.44), 14)
+	_add_line("FootprintTrailHint", PackedVector2Array([Vector2(46, -640), Vector2(82, -548)]), Color(0.05, 0.04, 0.035, 0.20), 2.0)
+	store_tv_glow = _add_rect("StoreInteriorTvGlow", Vector2(78, -706), Vector2(52, 30), Color(0.42, 0.72, 0.95, 0.25), false) as Polygon2D
+	_add_rect("StoreCounterShadow", Vector2(18, -690), Vector2(58, 15), Color(0.02, 0.018, 0.014, 0.34), false)
+	store_sensor_light = _add_ellipse("AutoDoorSensorBlink", Vector2(0, -666), Vector2(14, 5), Color(0.95, 0.18, 0.12, 0.72), 18)
+
 func _add_store_door_glow(position: Vector2) -> void:
 	_add_ellipse("StoreDoorGlowSoft", position + Vector2(0, 10), Vector2(58, 22), Color(0.68, 0.88, 1.0, 0.16), 24)
 	_add_polygon("StoreDoorLightStripe", position, PackedVector2Array([
@@ -244,6 +274,7 @@ func _process(delta: float) -> void:
 	if streetlight_glow_layers.is_empty() or not is_instance_valid(streetlight_lamp):
 		return
 	streetlight_flicker_phase += delta
+	store_light_phase += delta
 	var flicker := 0.55 + 0.45 * absf(sin(streetlight_flicker_phase * 9.0))
 	if int(streetlight_flicker_phase * 5.0) % 7 == 0:
 		flicker *= 0.28
@@ -255,6 +286,60 @@ func _process(delta: float) -> void:
 	streetlight_lamp.color = Color(0.98, 0.92, 0.50, 0.55 + flicker * 0.45)
 	if is_instance_valid(streetlight_lamp_bloom):
 		streetlight_lamp_bloom.color = Color(0.97, 0.88, 0.42, 0.06 + flicker * 0.18)
+	_update_store_clue_lights()
+	_update_tension_events(delta)
+
+func _update_store_clue_lights() -> void:
+	if is_instance_valid(store_sensor_light):
+		var sensor_alpha := 0.22
+		if int(store_light_phase * 3.0) % 4 == 0:
+			sensor_alpha = 0.78
+		store_sensor_light.color = Color(0.95, 0.18, 0.12, sensor_alpha)
+	if is_instance_valid(store_tv_glow):
+		var tv_flicker := 0.16 + absf(sin(store_light_phase * 4.7)) * 0.18
+		store_tv_glow.color = Color(0.42, 0.72, 0.95, tv_flicker)
+
+func _update_tension_events(delta: float) -> void:
+	var stage: int = _gm().stage
+	if stage != WALK_TO_STORE and stage != SPRAY_USED and stage != STORE_REACHED and stage != FINAL_CHASE:
+		return
+	var dialogue := get_node_or_null("/root/DialogueManager")
+	if dialogue != null and dialogue.is_active():
+		return
+	tension_timer -= delta
+	if tension_timer > 0.0:
+		return
+	_run_tension_event(stage)
+	tension_timer = tension_rng.randf_range(5.5, 10.0)
+
+func _run_tension_event(stage: int) -> void:
+	var manager := _gm()
+	match stage:
+		WALK_TO_STORE:
+			var event := tension_rng.randi_range(0, 2)
+			if event == 0:
+				manager.show_hint("왼쪽 수풀에서 뭔가 스쳤다.")
+				_audio().play_sfx("bush_rustle")
+			elif event == 1:
+				manager.show_hint("멀리서 한 박자 늦은 발소리가 들린다.")
+				_audio().play_sfx("distant_step")
+			else:
+				manager.show_hint("가로등이 낮게 지직거린다.")
+				_audio().play_sfx("streetlight")
+		SPRAY_USED:
+			manager.show_hint("아까의 발소리가 갑자기 끊겼다.")
+			_audio().play_sfx("distant_step")
+		STORE_REACHED:
+			var store_event := tension_rng.randi_range(0, 1)
+			if store_event == 0:
+				manager.show_hint("자동문 센서가 혼자 깜빡인다.")
+				_audio().play_sfx("auto_door")
+			else:
+				manager.show_hint("편의점 안쪽 TV 화면만 푸르게 흔들린다.")
+				_audio().play_sfx("fluorescent")
+		FINAL_CHASE:
+			manager.show_hint("숨소리가 귓가에 바짝 붙는다.")
+			_audio().play_sfx("heartbeat")
 
 func _add_interaction(id: String, position: Vector2, radius: float) -> void:
 	var area := InteractionArea.new()
@@ -290,6 +375,18 @@ func _add_trigger(id: String, position: Vector2, size: Vector2, required_stage: 
 	trigger.add_child(shape_node)
 	add_child(trigger)
 	triggers[id] = trigger
+
+func run_streetlight_glimpse() -> void:
+	if _gm().stage != WALK_TO_STORE or not is_instance_valid(enemy):
+		return
+	enemy.global_position = Vector2(0, -238)
+	enemy.show_waiting_silhouette()
+	_audio().play_sfx("streetlight")
+	if is_instance_valid(camera):
+		camera.shake(0.18, 3.0)
+	await get_tree().create_timer(0.24).timeout
+	if _gm().stage == WALK_TO_STORE and is_instance_valid(enemy) and not enemy.active:
+		enemy.stop_chase()
 
 func prepare_first_chase() -> void:
 	_gm().set_checkpoint("CP_1", Vector2(0, -130), WALK_TO_STORE)
@@ -335,6 +432,8 @@ func restore_checkpoint(position: Vector2, restore_stage: int) -> void:
 	stop_enemy()
 	if restore_stage == WALK_TO_STORE and triggers.has("first_chase"):
 		triggers["first_chase"].reset()
+	if restore_stage == WALK_TO_STORE and triggers.has("streetlight_glimpse"):
+		triggers["streetlight_glimpse"].reset()
 	if restore_stage == STORE_REACHED:
 		_gm().set_spray_uses(0)
 	else:

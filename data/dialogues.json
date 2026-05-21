@@ -41,6 +41,22 @@
   "store_not_ready": [
     { "speaker": "시스템", "text": "아직 여길 조사할 때가 아니다." }
   ],
+  "store_receipt": [
+    { "speaker": "시스템", "text": "젖은 영수증에는 오늘 날짜와 같은 시간이 찍혀 있다." },
+    { "speaker": "주인공", "text": "방금 누가 여기서 계산한 거야...?" }
+  ],
+  "store_footprints": [
+    { "speaker": "시스템", "text": "진흙 발자국이 자동문 앞에서 끊기지 않고 건물 뒤편으로 이어진다." },
+    { "speaker": "주인공", "text": "안으로 들어간 게 아니야. 뒤로 돌아간 거야." }
+  ],
+  "store_window": [
+    { "speaker": "시스템", "text": "계산대 쪽은 비어 있는데, 안쪽 TV만 푸르게 깜빡인다." },
+    { "speaker": "주인공", "text": "사람이 있으면 대답을 해야 하잖아..." }
+  ],
+  "store_sensor": [
+    { "speaker": "시스템", "text": "자동문 센서가 사람 없는 쪽을 향해 빨갛게 깜빡인다." },
+    { "speaker": "주인공", "text": "왜 내 쪽이 아니라... 옆을 보고 반응하지?" }
+  ],
   "store_locked": [
     { "speaker": "시스템", "text": "문이 잠겨 있다." },
     { "speaker": "주인공", "text": "왜...? 안에 불은 켜져 있는데." },

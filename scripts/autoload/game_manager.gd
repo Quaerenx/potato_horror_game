@@ -85,6 +85,15 @@ func handle_interaction(interaction_id: String) -> void:
 			_dialogue_manager().start_dialogue("fridge")
 		"mailbox":
 			_dialogue_manager().start_dialogue("mailbox")
+		"store_receipt":
+			_dialogue_manager().start_dialogue("store_receipt")
+		"store_footprints":
+			_dialogue_manager().start_dialogue("store_footprints")
+		"store_window":
+			_dialogue_manager().start_dialogue("store_window")
+		"store_sensor":
+			_audio_manager().play_sfx("auto_door")
+			_dialogue_manager().start_dialogue("store_sensor")
 		_:
 			_dialogue_manager().start_lines([
 				{"speaker": "시스템", "text": "밤공기만 조용히 지나간다."}
@@ -105,6 +114,9 @@ func handle_trigger(trigger_id: String) -> void:
 		"first_chase":
 			if stage == GameStage.WALK_TO_STORE:
 				start_first_chase()
+		"streetlight_glimpse":
+			if stage == GameStage.WALK_TO_STORE and is_instance_valid(main_node):
+				main_node.run_streetlight_glimpse()
 		"store_arrival":
 			if stage == GameStage.SPRAY_USED:
 				mark_store_reached()

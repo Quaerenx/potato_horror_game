@@ -56,9 +56,16 @@ func _init() -> void:
 	_check_text_contains("res://scripts/main.gd", "StreetlightLampHousing", failures)
 	_check_text_contains("res://scripts/main.gd", "StreetlightLightPool", failures)
 	_check_text_contains("res://scripts/main.gd", "_add_store_lighting", failures)
+	_check_text_contains("res://scripts/main.gd", "_add_store_clues", failures)
+	_check_text_contains("res://scripts/main.gd", "streetlight_glimpse", failures)
+	_check_text_contains("res://scripts/main.gd", "run_streetlight_glimpse", failures)
+	_check_text_contains("res://scripts/main.gd", "_run_tension_event", failures)
 	_check_text_contains("res://scripts/spray_controller.gd", "manager.set_spray_uses(manager.spray_uses - 1)", failures)
 	_check_text_contains("res://scripts/autoload/audio_manager.gd", "AudioStreamGenerator", failures)
 	_check_text_contains("res://scripts/autoload/audio_manager.gd", "rescue_honk", failures)
+	_check_text_contains("res://scripts/autoload/audio_manager.gd", "bush_rustle", failures)
+	_check_text_contains("res://scripts/autoload/game_manager.gd", "store_receipt", failures)
+	_check_text_contains("res://data/dialogues.json", "store_footprints", failures)
 
 	if failures.size() > 0:
 		for failure in failures:

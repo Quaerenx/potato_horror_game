@@ -157,6 +157,22 @@
 - Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
 - Issues: Manual playtest is still needed for exact sound volume, catch-area feel, and final retreat timing.
 
+## Checkpoint 15 — Environmental clues, streetlight staging, and tension events
+- Done: Added convenience-store environmental clues: dropped receipt, muddy footprints leading around the store, blinking auto-door sensor, interior TV glow, and counter shadow.
+- Done: Added investigation interactions and dialogue for `store_receipt`, `store_footprints`, `store_window`, and `store_sensor`.
+- Done: Changed the streetlight creature reveal into three beats: no creature at first, a brief flicker glimpse near the streetlight, then a later chase activation after the player moves farther.
+- Done: Added a one-shot `streetlight_glimpse` trigger and reset it on checkpoint restore.
+- Done: Added stage-aware random tension events using HUD hints and procedural sounds for bush rustle, delayed footsteps, lamp buzz, silence after spray, auto-door sensor, TV flicker, and heartbeat during final chase.
+- Done: Added generated sound specs for `bush_rustle`, `distant_step`, `fluorescent`, `auto_door`, and `heartbeat`.
+- Verified: `python tools\verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: JSON validation passed for `data/dialogues.json`, `data/game_config.json`, and `asset_manifest.lock.json`.
+- Verified: Static deformation scan found no `flip_h`, explicit scale-axis edits, or rotation mutations in scripts/scenes.
+- Verified: Godot import passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
+- Issues: Manual playtest is still recommended to tune how often tension hints appear and how noticeable the short streetlight glimpse is.
+
 ## Final Summary
 - Implemented: First playable project structure, main scene, player movement, sprint, collision, camera follow, HUD, dialogue UI, interactions, triggers, first chase, one-use spray, locked store reversal, final chase, game over checkpoint restore, boyfriend car rescue, ending screen, asset lock, and validation scripts.
 - Implemented later: New potato-style car, nightmare creature, generated convenience store sprite, left dense foliage, right safety fence, and car-road visual separation.

@@ -14,6 +14,11 @@ var sfx_specs := {
 	"chase_start": {"duration": 0.42, "frequency": 64.0, "volume": 0.20, "noise": 0.25},
 	"game_over": {"duration": 0.48, "frequency": 52.0, "volume": 0.22, "noise": 0.18},
 	"rescue_honk": {"duration": 0.36, "frequency": 430.0, "volume": 0.18, "noise": 0.02},
+	"bush_rustle": {"duration": 0.26, "frequency": 240.0, "volume": 0.08, "noise": 0.92},
+	"distant_step": {"duration": 0.20, "frequency": 82.0, "volume": 0.10, "noise": 0.38},
+	"fluorescent": {"duration": 0.32, "frequency": 960.0, "volume": 0.065, "noise": 0.16},
+	"auto_door": {"duration": 0.20, "frequency": 620.0, "volume": 0.09, "noise": 0.06},
+	"heartbeat": {"duration": 0.28, "frequency": 58.0, "volume": 0.14, "noise": 0.12},
 }
 
 func _ready() -> void:
