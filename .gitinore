@@ -1,0 +1,7 @@
+@"
+.godot/
+.mono/
+export/
+builds/
+*.tmp
+"@ | Set-Content -Encoding UTF8 .gitignore

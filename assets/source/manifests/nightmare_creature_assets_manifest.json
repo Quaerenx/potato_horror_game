@@ -1,0 +1,151 @@
+{
+  "ok": true,
+  "asset_family": "potato-style nightmare horror creature",
+  "format": "transparent PNG",
+  "style": "same hand-drawn marker style as the potato character; much more grotesque, uncanny, non-gory horror silhouette",
+  "grid": {
+    "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-4view-grid-448x640.png",
+    "cell_width": 448,
+    "cell_height": 640,
+    "columns": 4,
+    "rows": 1,
+    "order": [
+      "front-3q",
+      "side",
+      "rear",
+      "opposite-front-3q"
+    ]
+  },
+  "assets": [
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-single.png",
+      "role": "main transparent nightmare creature sprite",
+      "width": 1042,
+      "height": 1292,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        28,
+        28,
+        1014,
+        1264
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-single-768h.png",
+      "role": "scaled main sprite, 768px high",
+      "width": 619,
+      "height": 768,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        14,
+        15,
+        605,
+        753
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-single-512h.png",
+      "role": "scaled main sprite, 512px high",
+      "width": 413,
+      "height": 512,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        9,
+        9,
+        404,
+        503
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-single-256h.png",
+      "role": "scaled main sprite, 256px high",
+      "width": 206,
+      "height": 256,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        3,
+        3,
+        203,
+        253
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-4view-grid-448x640.png",
+      "role": "4-view grid with 448x640 cells; order front-3q, side, rear, opposite-front-3q",
+      "width": 1792,
+      "height": 640,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        57,
+        34,
+        1724,
+        602
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-4view-sheet.png",
+      "role": "trimmed 4-view nightmare creature sheet",
+      "width": 1944,
+      "height": 786,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        50,
+        50,
+        1894,
+        736
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-front-3q.png",
+      "role": "individual front-3q nightmare creature sprite",
+      "width": 437,
+      "height": 712,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        22,
+        22,
+        437,
+        690
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-side.png",
+      "role": "individual side nightmare creature sprite",
+      "width": 371,
+      "height": 686,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        22,
+        22,
+        349,
+        664
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-rear.png",
+      "role": "individual rear nightmare creature sprite",
+      "width": 451,
+      "height": 653,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        22,
+        22,
+        429,
+        631
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-style-nightmare-creature-assets\\nightmare-creature-opposite-front-3q.png",
+      "role": "individual opposite-front-3q nightmare creature sprite",
+      "width": 419,
+      "height": 730,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        22,
+        22,
+        397,
+        708
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+config_version=5
+
+[application]
+
+config/name="편의점 가는 길"
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.2")
+
+[autoload]
+
+GameManager="*res://scripts/autoload/game_manager.gd"
+DialogueManager="*res://scripts/autoload/dialogue_manager.gd"
+AudioManager="*res://scripts/autoload/audio_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

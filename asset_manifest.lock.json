@@ -1,0 +1,456 @@
+{
+  "asset_lock_version": 4,
+  "purpose": "Asset lock for the Godot short horror game. Source pixels for provided character/car/creature assets must not be edited, redrawn, regenerated, cropped, stretched, recolored, mirrored, rotated, or retouched.",
+  "source_policy": "Current character/ files are source of truth for provided assets; project uses byte-for-byte copies under assets/source/. The convenience store PNG is a generated project asset and is locked by hash after chroma-key removal.",
+  "character_sheet_grid": {
+    "columns": 8,
+    "rows": 9,
+    "cell_width": 192,
+    "cell_height": 208,
+    "use_full_cells": true,
+    "do_not_trim_transparent_padding": true
+  },
+  "creature_motion_atlas_grid": {
+    "columns": 8,
+    "rows": 6,
+    "cell_width": 448,
+    "cell_height": 640,
+    "use_full_cells": true,
+    "do_not_trim_transparent_padding": true,
+    "runtime_path": "assets/source/creatures/nightmare-creature-motion-atlas.png",
+    "alternate_webp_path": "assets/source/creatures/nightmare-creature-motion-atlas.webp",
+    "manifest_path": "assets/source/manifests/nightmare_creature_motion_manifest.json"
+  },
+  "generated_assets": {
+    "convenience_store_prompt_summary": "Hand-drawn marker style rural Korean convenience store facade, warm lit windows, sign text ???, flat #00ff00 chroma-key background, no logos, no trademarks.",
+    "chroma_key_removed": true,
+    "source_path": "assets/source/buildings/convenience-store-potato-style-source.png",
+    "final_path": "assets/source/buildings/convenience-store-potato-style.png"
+  },
+  "rules": [
+    "Use supplied assets as the only hero, boyfriend, car, and creature visuals unless explicitly generated as new project assets.",
+    "Do not redraw, regenerate, crop, stretch, squash, recolor, mirror, rotate, retouch, or apply AI upscaling/downscaling to supplied character/car/creature assets.",
+    "Use only uniform runtime scale: Vector2(s, s), positive values only.",
+    "Use full atlas cells for character and creature animations; never trim transparent padding per frame.",
+    "Do not use flip_h or negative scale for character direction; left/right rows already exist.",
+    "Place headlights, shadows, silhouettes, or interaction effects in separate overlay/runtime nodes; never bake effects into source images."
+  ],
+  "assets": [
+    {
+      "key": "buildings_convenience_store_potato_style_source_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/buildings/convenience-store-potato-style-source.png",
+      "sha256": "2ea2f558f9dfc95280737fad374b8c32f6af1d79e6e28951b3796e8ed18c4f95",
+      "bytes": 2077231,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "buildings_convenience_store_potato_style_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/buildings/convenience-store-potato-style.png",
+      "sha256": "3e0fe8d109d1a066f714638bd99cae6bf0083041a1542664ebcdd34e3cd6c76b",
+      "bytes": 1562915,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "characters_boyfriend_spritesheet_webp",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/characters/boyfriend_spritesheet.webp",
+      "sha256": "3a3d260afe20d65a23c4321edac1dc67dfc2ba5a9003e6a5aac2b5b7731ed0a4",
+      "bytes": 1677716,
+      "width": 1536,
+      "height": 1872,
+      "mode": "RGBA",
+      "format": "WEBP"
+    },
+    {
+      "key": "characters_hero_spritesheet_webp",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/characters/hero_spritesheet.webp",
+      "sha256": "2e14be3f381f98bf652379feea700b41d99036ed5cf901468bc031339dd3887a",
+      "bytes": 1855736,
+      "width": 1536,
+      "height": 1872,
+      "mode": "RGBA",
+      "format": "WEBP"
+    },
+    {
+      "key": "creatures_nightmare_creature_4view_grid_448x640_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-4view-grid-448x640.png",
+      "sha256": "8328aaee873e3d5d5b4e7733edef03353341a87eca9e55abc875b44469220b32",
+      "bytes": 991739,
+      "width": 1792,
+      "height": 640,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_4view_sheet_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-4view-sheet.png",
+      "sha256": "309130adbbd3e179a89c4f429adde4dc9e8d40133758901233e889c2d673ae76",
+      "bytes": 1232762,
+      "width": 1944,
+      "height": 786,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_front_3q_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-front-3q.png",
+      "sha256": "850994e6cd54bd3310690ca6a9b48840046f4515b93de922b8d05701b11af4ae",
+      "bytes": 334161,
+      "width": 437,
+      "height": 712,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_motion_atlas_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-motion-atlas.png",
+      "sha256": "ffe458fc385dab9c4784a2f088c1fe61bce29a33076508af8f4b3c9079675720",
+      "bytes": 6780386,
+      "width": 3584,
+      "height": 3840,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_motion_atlas_webp",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-motion-atlas.webp",
+      "sha256": "139196afed99902561ae08646cbc237bb52ae0cc172fc897bad3fe2ea660a23c",
+      "bytes": 4701912,
+      "width": 3584,
+      "height": 3840,
+      "mode": "RGBA",
+      "format": "WEBP"
+    },
+    {
+      "key": "creatures_nightmare_creature_opposite_front_3q_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-opposite-front-3q.png",
+      "sha256": "5cb8f48bb55a5f8e925ae81d848192486329665fec6d868bd2f9f9df4377a312",
+      "bytes": 308469,
+      "width": 419,
+      "height": 730,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_rear_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-rear.png",
+      "sha256": "af1961e4e7d5297026c4a92a1485b2e6c25849ecb98b5f82f02a5a4894752789",
+      "bytes": 303911,
+      "width": 451,
+      "height": 653,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_side_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-side.png",
+      "sha256": "1ceb6ea43e55c221515f16c296efd0af7de19c531a7c678e3ec2ca674e1afb9d",
+      "bytes": 267625,
+      "width": 371,
+      "height": 686,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_single_256h_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-single-256h.png",
+      "sha256": "5e91b739cc661f852b294156c54b3e1088b429520dcea4879f4bd2493a102128",
+      "bytes": 63769,
+      "width": 206,
+      "height": 256,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_single_512h_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-single-512h.png",
+      "sha256": "4efb3909fa7e2ccdfafa5758cce360f91855976eb72dfbf12ec04301fc107d5b",
+      "bytes": 220022,
+      "width": 413,
+      "height": 512,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_single_768h_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-single-768h.png",
+      "sha256": "931d5b4cea79aeb76a94b79ba8eac52f348940f8dd0d0426ffbf2d97c947f8b2",
+      "bytes": 462224,
+      "width": 619,
+      "height": 768,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "creatures_nightmare_creature_single_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/creatures/nightmare-creature-single.png",
+      "sha256": "4f701bfe36f4cb9f3c654711699aea2adc1a5d32f082e54a9cfba046b36bea59",
+      "bytes": 1151934,
+      "width": 1042,
+      "height": 1292,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "manifests_nightmare_creature_assets_manifest_json",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/manifests/nightmare_creature_assets_manifest.json",
+      "sha256": "cf683bb198237263d8c3e39356b12d4c154871994aad49768af4b91666e2f95f",
+      "bytes": 4938
+    },
+    {
+      "key": "manifests_nightmare_creature_motion_manifest_json",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/manifests/nightmare_creature_motion_manifest.json",
+      "sha256": "c20626a9d36dafcfcd0acedf209d2d795981e1d15fcd156fd0d22519d0470172",
+      "bytes": 19121
+    },
+    {
+      "key": "manifests_potato_style_car_assets_manifest_json",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/manifests/potato_style_car_assets_manifest.json",
+      "sha256": "4701e7157b6974f84ac30536054590429c60a257b5e04f521c200d1ac3145c4e",
+      "bytes": 4255
+    },
+    {
+      "key": "manifests_validation_boyfriend_json",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/manifests/validation_boyfriend.json",
+      "sha256": "0094ddd97ef0e4da4999eb49b1d34d9f193185c2ff4245b4c59445807da89ae5",
+      "bytes": 10270
+    },
+    {
+      "key": "manifests_validation_hero_json",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/manifests/validation_hero.json",
+      "sha256": "40a56c68778cf629b282856757d08c30272e14980b4e78fc06fdd6e552820672",
+      "bytes": 10264
+    },
+    {
+      "key": "manifests_vehicle_assets_manifest_json",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/manifests/vehicle_assets_manifest.json",
+      "sha256": "6165cf83b981dba31d89f8c66ca3f2a03c0d38f3e0254edfa1931e38c663b3c7",
+      "bytes": 4097
+    },
+    {
+      "key": "vehicles_potato_style_car_4view_grid_640x360_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-4view-grid-640x360.png",
+      "sha256": "75a9aed5422c699cc243659b09ea77b32d878e36c6ee4363d1290ca1df7e23a6",
+      "bytes": 731530,
+      "width": 2560,
+      "height": 360,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_4view_sheet_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-4view-sheet.png",
+      "sha256": "d13c279e00dd10ac704a0b1389c1693d4ad9f48bf6d6a307033f38e186474b6b",
+      "bytes": 2344985,
+      "width": 4107,
+      "height": 646,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_front_3q_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-front-3q.png",
+      "sha256": "8be5fecefc7f94deb8af2994176f82f842285aaf0dea7064792ca15aa2385814",
+      "bytes": 180950,
+      "width": 513,
+      "height": 317,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_opposite_side_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-opposite-side.png",
+      "sha256": "471101e7c6dcc48465046db4047d19115bea1b5d1b9c2ce6158026c9e0d16ae1",
+      "bytes": 906512,
+      "width": 1381,
+      "height": 561,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_rear_3q_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-rear-3q.png",
+      "sha256": "63ba63095d685a9ae25c4029abf40420e38a075206fa1f44d3602760f67652ce",
+      "bytes": 158695,
+      "width": 460,
+      "height": 308,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_side_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-side.png",
+      "sha256": "19bd34671f11f9c00b9aac5af6eba18fd616f104f3e4b3c41f349b901b359b7e",
+      "bytes": 1040428,
+      "width": 1487,
+      "height": 590,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_single_1024w_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-single-1024w.png",
+      "sha256": "74d82a544246a8d86d04734a68c37ebd56902dcc7039637c7bf6f92de273d096",
+      "bytes": 608619,
+      "width": 1024,
+      "height": 469,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_single_512w_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-single-512w.png",
+      "sha256": "78ac5869ed7c348ef21a4a261cb70e8ce2c9650ecd8350a7ca188416455657e7",
+      "bytes": 159449,
+      "width": 512,
+      "height": 234,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_potato_style_car_single_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/potato-style-car-single.png",
+      "sha256": "1c1761347cb11c24971c88b2cab3969d2860c9dd736b9e77ed5d6ca69708c026",
+      "bytes": 1106437,
+      "width": 1414,
+      "height": 647,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_4view_grid_640x360_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-4view-grid-640x360.png",
+      "sha256": "1b16c32c1cb053482d74d0caf249697c04a1208467634c03c79212d1d10404b9",
+      "bytes": 623836,
+      "width": 2560,
+      "height": 360,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_4view_sheet_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-4view-sheet.png",
+      "sha256": "f3ba68ab22f70934003d9ddf9ed74133fa12ffcba2239ea5c2a9d901ba3eb385",
+      "bytes": 610687,
+      "width": 2159,
+      "height": 306,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_front_3q_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-front-3q.png",
+      "sha256": "1127037171b63d7931efbf5d5e6c116a8bf3a7881450d6b0b8c5e998381f5460",
+      "bytes": 153839,
+      "width": 524,
+      "height": 294,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_opposite_side_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-opposite-side.png",
+      "sha256": "712e2d686452ef90f317e14201600b3855edc7a2c8ec7a71ff0c7bf2b56d6cd8",
+      "bytes": 148209,
+      "width": 540,
+      "height": 257,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_rear_3q_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-rear-3q.png",
+      "sha256": "1e7639c08f77b947d42fe05e9e1058da9f53ab1d809c8b90a61d38b32fb83c78",
+      "bytes": 148402,
+      "width": 543,
+      "height": 288,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_side_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-side.png",
+      "sha256": "48c2d6b0199dc43a6b50855b9c6aeb5ede14486f2e5d763bfad0f4d19375c824",
+      "bytes": 158234,
+      "width": 543,
+      "height": 265,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_single_1024w_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-single-1024w.png",
+      "sha256": "baeb62f176bcfec6ace0ebf6fc463180549b632e2c6917f7c80f711643c4658a",
+      "bytes": 485150,
+      "width": 1024,
+      "height": 458,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_single_512w_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-single-512w.png",
+      "sha256": "24974de809ac3ebc9d01e6b00da0cb7be46bce3a39a07e623fd49ad8565b6866",
+      "bytes": 129507,
+      "width": 512,
+      "height": 229,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "vehicles_silver_sedan_single_png",
+      "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
+      "path": "assets/source/vehicles/silver-sedan-single.png",
+      "sha256": "c0a6d19bc25ab206b68e2bcdbc89356746a6b8f1318993bdab2da74a96fea098",
+      "bytes": 922506,
+      "width": 1479,
+      "height": 661,
+      "mode": "RGBA",
+      "format": "PNG"
+    }
+  ]
+}

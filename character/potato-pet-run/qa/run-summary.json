@@ -1,0 +1,9 @@
+{
+    "ok":  true,
+    "run_dir":  "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run",
+    "spritesheet":  "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\final\\spritesheet.webp",
+    "validation":  "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\final\\validation.json",
+    "contact_sheet":  "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\qa\\contact-sheet.png",
+    "review":  "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\qa\\review.json",
+    "package":  "C:\\Users\\PP\\.codex\\pets\\potato-pet"
+}

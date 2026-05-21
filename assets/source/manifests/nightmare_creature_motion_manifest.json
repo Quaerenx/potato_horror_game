@@ -1,0 +1,901 @@
+{
+  "name": "potato-style-nightmare-creature-motion",
+  "source_assets_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-assets",
+  "reference_images": {
+    "single": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\reference\\nightmare-creature-single.png",
+    "four_view": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\reference\\nightmare-creature-4view-grid-448x640.png"
+  },
+  "atlas": {
+    "png": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\final\\nightmare-creature-motion-atlas.png",
+    "webp": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\final\\nightmare-creature-motion-atlas.webp",
+    "columns": 8,
+    "rows": 6,
+    "cell_width": 448,
+    "cell_height": 640
+  },
+  "states": [
+    {
+      "name": "idle-twitch",
+      "row": 0,
+      "frame_count": 6,
+      "duration_ms": 120,
+      "description": "subtle twitching idle",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\frames\\idle-twitch",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\previews\\idle-twitch.gif"
+    },
+    {
+      "name": "stalk",
+      "row": 1,
+      "frame_count": 8,
+      "duration_ms": 105,
+      "description": "slow unsettling stalk",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\frames\\stalk",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\previews\\stalk.gif"
+    },
+    {
+      "name": "charge-towards",
+      "row": 2,
+      "frame_count": 8,
+      "duration_ms": 85,
+      "description": "grotesque creature rushing toward the camera",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\frames\\charge-towards",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\previews\\charge-towards.gif"
+    },
+    {
+      "name": "claw-swipe",
+      "row": 3,
+      "frame_count": 6,
+      "duration_ms": 85,
+      "description": "violent claw swipe",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\frames\\claw-swipe",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\previews\\claw-swipe.gif"
+    },
+    {
+      "name": "scream",
+      "row": 4,
+      "frame_count": 6,
+      "duration_ms": 95,
+      "description": "mouth tearing open in a scream",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\frames\\scream",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\previews\\scream.gif"
+    },
+    {
+      "name": "collapse",
+      "row": 5,
+      "frame_count": 8,
+      "duration_ms": 110,
+      "description": "spasming collapse and recovery loop",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\frames\\collapse",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\previews\\collapse.gif"
+    }
+  ],
+  "qa": {
+    "contact_sheet": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\contact-sheet.png",
+    "previews_dir": "C:\\Users\\PP\\horror\\character\\potato-style-nightmare-creature-motion\\qa\\previews"
+  },
+  "notes": "Potato illustration style horror creature with a grotesque charge-towards motion. Transparent atlas cells are ready for game import.",
+  "extraction_log": [
+    {
+      "state": "idle-twitch",
+      "scale": 1.0,
+      "centers": [
+        258.9,
+        592.3,
+        945.8,
+        1295.7,
+        1644.2,
+        2008.7
+      ],
+      "bounds": [
+        0,
+        426,
+        769,
+        1121,
+        1470,
+        1826,
+        2172
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "center": 258.9,
+          "bounds": [
+            0,
+            426
+          ],
+          "main_area": 98834,
+          "kept_roots": 1,
+          "bbox": [
+            17,
+            110,
+            426,
+            677
+          ]
+        },
+        {
+          "frame": 1,
+          "center": 592.3,
+          "bounds": [
+            426,
+            769
+          ],
+          "main_area": 81215,
+          "kept_roots": 1,
+          "bbox": [
+            436,
+            127,
+            741,
+            680
+          ]
+        },
+        {
+          "frame": 2,
+          "center": 945.8,
+          "bounds": [
+            769,
+            1121
+          ],
+          "main_area": 94158,
+          "kept_roots": 1,
+          "bbox": [
+            769,
+            123,
+            1121,
+            673
+          ]
+        },
+        {
+          "frame": 3,
+          "center": 1295.7,
+          "bounds": [
+            1121,
+            1470
+          ],
+          "main_area": 85750,
+          "kept_roots": 1,
+          "bbox": [
+            1123,
+            134,
+            1463,
+            672
+          ]
+        },
+        {
+          "frame": 4,
+          "center": 1644.2,
+          "bounds": [
+            1470,
+            1826
+          ],
+          "main_area": 82367,
+          "kept_roots": 1,
+          "bbox": [
+            1470,
+            150,
+            1826,
+            677
+          ]
+        },
+        {
+          "frame": 5,
+          "center": 2008.7,
+          "bounds": [
+            1826,
+            2172
+          ],
+          "main_area": 94890,
+          "kept_roots": 1,
+          "bbox": [
+            1826,
+            109,
+            2172,
+            677
+          ]
+        }
+      ]
+    },
+    {
+      "state": "stalk",
+      "scale": 1.0,
+      "centers": [
+        179.0,
+        451.7,
+        715.9,
+        984.0,
+        1236.7,
+        1514.2,
+        1778.2,
+        2044.9
+      ],
+      "bounds": [
+        0,
+        315,
+        584,
+        850,
+        1110,
+        1375,
+        1646,
+        1912,
+        2172
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "center": 179.0,
+          "bounds": [
+            0,
+            315
+          ],
+          "main_area": 45545,
+          "kept_roots": 1,
+          "bbox": [
+            14,
+            186,
+            309,
+            587
+          ]
+        },
+        {
+          "frame": 1,
+          "center": 451.7,
+          "bounds": [
+            315,
+            584
+          ],
+          "main_area": 46179,
+          "kept_roots": 1,
+          "bbox": [
+            315,
+            187,
+            579,
+            587
+          ]
+        },
+        {
+          "frame": 2,
+          "center": 715.9,
+          "bounds": [
+            584,
+            850
+          ],
+          "main_area": 44189,
+          "kept_roots": 1,
+          "bbox": [
+            584,
+            183,
+            842,
+            588
+          ]
+        },
+        {
+          "frame": 3,
+          "center": 984.0,
+          "bounds": [
+            850,
+            1110
+          ],
+          "main_area": 46255,
+          "kept_roots": 1,
+          "bbox": [
+            850,
+            184,
+            1110,
+            592
+          ]
+        },
+        {
+          "frame": 4,
+          "center": 1236.7,
+          "bounds": [
+            1110,
+            1375
+          ],
+          "main_area": 44181,
+          "kept_roots": 1,
+          "bbox": [
+            1124,
+            184,
+            1367,
+            565
+          ]
+        },
+        {
+          "frame": 5,
+          "center": 1514.2,
+          "bounds": [
+            1375,
+            1646
+          ],
+          "main_area": 45807,
+          "kept_roots": 1,
+          "bbox": [
+            1379,
+            185,
+            1623,
+            594
+          ]
+        },
+        {
+          "frame": 6,
+          "center": 1778.2,
+          "bounds": [
+            1646,
+            1912
+          ],
+          "main_area": 45180,
+          "kept_roots": 1,
+          "bbox": [
+            1646,
+            201,
+            1889,
+            607
+          ]
+        },
+        {
+          "frame": 7,
+          "center": 2044.9,
+          "bounds": [
+            1912,
+            2172
+          ],
+          "main_area": 46554,
+          "kept_roots": 1,
+          "bbox": [
+            1912,
+            189,
+            2171,
+            596
+          ]
+        }
+      ]
+    },
+    {
+      "state": "charge-towards",
+      "scale": 1.3816,
+      "centers": [
+        141.8,
+        394.2,
+        642.9,
+        921.3,
+        1182.0,
+        1444.7,
+        1710.6,
+        1983.6
+      ],
+      "bounds": [
+        0,
+        268,
+        519,
+        782,
+        1052,
+        1313,
+        1578,
+        1847,
+        2172
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "center": 141.8,
+          "bounds": [
+            0,
+            268
+          ],
+          "main_area": 36018,
+          "kept_roots": 1,
+          "bbox": [
+            16,
+            190,
+            252,
+            524
+          ]
+        },
+        {
+          "frame": 1,
+          "center": 394.2,
+          "bounds": [
+            268,
+            519
+          ],
+          "main_area": 38620,
+          "kept_roots": 1,
+          "bbox": [
+            268,
+            181,
+            507,
+            543
+          ]
+        },
+        {
+          "frame": 2,
+          "center": 642.9,
+          "bounds": [
+            519,
+            782
+          ],
+          "main_area": 34981,
+          "kept_roots": 1,
+          "bbox": [
+            519,
+            185,
+            754,
+            525
+          ]
+        },
+        {
+          "frame": 3,
+          "center": 921.3,
+          "bounds": [
+            782,
+            1052
+          ],
+          "main_area": 40819,
+          "kept_roots": 1,
+          "bbox": [
+            782,
+            151,
+            1042,
+            530
+          ]
+        },
+        {
+          "frame": 4,
+          "center": 1182.0,
+          "bounds": [
+            1052,
+            1313
+          ],
+          "main_area": 44342,
+          "kept_roots": 1,
+          "bbox": [
+            1052,
+            148,
+            1293,
+            553
+          ]
+        },
+        {
+          "frame": 5,
+          "center": 1444.7,
+          "bounds": [
+            1313,
+            1578
+          ],
+          "main_area": 48954,
+          "kept_roots": 1,
+          "bbox": [
+            1313,
+            143,
+            1574,
+            561
+          ]
+        },
+        {
+          "frame": 6,
+          "center": 1710.6,
+          "bounds": [
+            1578,
+            1847
+          ],
+          "main_area": 47810,
+          "kept_roots": 1,
+          "bbox": [
+            1578,
+            164,
+            1847,
+            530
+          ]
+        },
+        {
+          "frame": 7,
+          "center": 1983.6,
+          "bounds": [
+            1847,
+            2172
+          ],
+          "main_area": 51536,
+          "kept_roots": 1,
+          "bbox": [
+            1847,
+            192,
+            2156,
+            630
+          ]
+        }
+      ]
+    },
+    {
+      "state": "claw-swipe",
+      "scale": 0.9836,
+      "centers": [
+        195.3,
+        507.2,
+        834.0,
+        1254.9,
+        1687.7,
+        2024.7
+      ],
+      "bounds": [
+        0,
+        351,
+        671,
+        1044,
+        1471,
+        1856,
+        2172
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "center": 195.3,
+          "bounds": [
+            0,
+            351
+          ],
+          "main_area": 56457,
+          "kept_roots": 1,
+          "bbox": [
+            18,
+            164,
+            333,
+            626
+          ]
+        },
+        {
+          "frame": 1,
+          "center": 507.2,
+          "bounds": [
+            351,
+            671
+          ],
+          "main_area": 63224,
+          "kept_roots": 1,
+          "bbox": [
+            351,
+            160,
+            636,
+            597
+          ]
+        },
+        {
+          "frame": 2,
+          "center": 834.0,
+          "bounds": [
+            671,
+            1044
+          ],
+          "main_area": 66084,
+          "kept_roots": 1,
+          "bbox": [
+            671,
+            49,
+            994,
+            596
+          ]
+        },
+        {
+          "frame": 3,
+          "center": 1254.9,
+          "bounds": [
+            1044,
+            1471
+          ],
+          "main_area": 66525,
+          "kept_roots": 1,
+          "bbox": [
+            1044,
+            181,
+            1471,
+            590
+          ]
+        },
+        {
+          "frame": 4,
+          "center": 1687.7,
+          "bounds": [
+            1471,
+            1856
+          ],
+          "main_area": 56275,
+          "kept_roots": 1,
+          "bbox": [
+            1475,
+            181,
+            1820,
+            596
+          ]
+        },
+        {
+          "frame": 5,
+          "center": 2024.7,
+          "bounds": [
+            1856,
+            2172
+          ],
+          "main_area": 53954,
+          "kept_roots": 1,
+          "bbox": [
+            1856,
+            181,
+            2159,
+            637
+          ]
+        }
+      ]
+    },
+    {
+      "state": "scream",
+      "scale": 1.0,
+      "centers": [
+        180.9,
+        558.8,
+        924.5,
+        1274.3,
+        1638.7,
+        1997.3
+      ],
+      "bounds": [
+        0,
+        370,
+        742,
+        1099,
+        1456,
+        1818,
+        2172
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "center": 180.9,
+          "bounds": [
+            0,
+            370
+          ],
+          "main_area": 57320,
+          "kept_roots": 1,
+          "bbox": [
+            15,
+            181,
+            326,
+            628
+          ]
+        },
+        {
+          "frame": 1,
+          "center": 558.8,
+          "bounds": [
+            370,
+            742
+          ],
+          "main_area": 68787,
+          "kept_roots": 1,
+          "bbox": [
+            370,
+            136,
+            722,
+            592
+          ]
+        },
+        {
+          "frame": 2,
+          "center": 924.5,
+          "bounds": [
+            742,
+            1099
+          ],
+          "main_area": 73670,
+          "kept_roots": 1,
+          "bbox": [
+            744,
+            115,
+            1082,
+            599
+          ]
+        },
+        {
+          "frame": 3,
+          "center": 1274.3,
+          "bounds": [
+            1099,
+            1456
+          ],
+          "main_area": 80331,
+          "kept_roots": 1,
+          "bbox": [
+            1099,
+            63,
+            1455,
+            600
+          ]
+        },
+        {
+          "frame": 4,
+          "center": 1638.7,
+          "bounds": [
+            1456,
+            1818
+          ],
+          "main_area": 65414,
+          "kept_roots": 1,
+          "bbox": [
+            1461,
+            176,
+            1803,
+            598
+          ]
+        },
+        {
+          "frame": 5,
+          "center": 1997.3,
+          "bounds": [
+            1818,
+            2172
+          ],
+          "main_area": 63214,
+          "kept_roots": 1,
+          "bbox": [
+            1822,
+            183,
+            2139,
+            603
+          ]
+        }
+      ]
+    },
+    {
+      "state": "collapse",
+      "scale": 1.0,
+      "centers": [
+        137.8,
+        376.3,
+        625.8,
+        889.3,
+        1145.4,
+        1406.3,
+        1686.1,
+        1971.1
+      ],
+      "bounds": [
+        0,
+        257,
+        501,
+        758,
+        1017,
+        1276,
+        1546,
+        1829,
+        2123
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "center": 137.8,
+          "bounds": [
+            0,
+            257
+          ],
+          "main_area": 46768,
+          "kept_roots": 1,
+          "bbox": [
+            6,
+            145,
+            257,
+            555
+          ]
+        },
+        {
+          "frame": 1,
+          "center": 376.3,
+          "bounds": [
+            257,
+            501
+          ],
+          "main_area": 44745,
+          "kept_roots": 1,
+          "bbox": [
+            257,
+            171,
+            488,
+            571
+          ]
+        },
+        {
+          "frame": 2,
+          "center": 625.8,
+          "bounds": [
+            501,
+            758
+          ],
+          "main_area": 42601,
+          "kept_roots": 1,
+          "bbox": [
+            501,
+            217,
+            744,
+            571
+          ]
+        },
+        {
+          "frame": 3,
+          "center": 889.3,
+          "bounds": [
+            758,
+            1017
+          ],
+          "main_area": 36769,
+          "kept_roots": 1,
+          "bbox": [
+            762,
+            279,
+            1009,
+            566
+          ]
+        },
+        {
+          "frame": 4,
+          "center": 1145.4,
+          "bounds": [
+            1017,
+            1276
+          ],
+          "main_area": 37950,
+          "kept_roots": 1,
+          "bbox": [
+            1017,
+            218,
+            1248,
+            579
+          ]
+        },
+        {
+          "frame": 5,
+          "center": 1406.3,
+          "bounds": [
+            1276,
+            1546
+          ],
+          "main_area": 34285,
+          "kept_roots": 1,
+          "bbox": [
+            1276,
+            281,
+            1536,
+            583
+          ]
+        },
+        {
+          "frame": 6,
+          "center": 1686.1,
+          "bounds": [
+            1546,
+            1829
+          ],
+          "main_area": 23008,
+          "kept_roots": 1,
+          "bbox": [
+            1546,
+            418,
+            1825,
+            582
+          ]
+        },
+        {
+          "frame": 7,
+          "center": 1971.1,
+          "bounds": [
+            1829,
+            2123
+          ],
+          "main_area": 21486,
+          "kept_roots": 1,
+          "bbox": [
+            1829,
+            450,
+            2119,
+            584
+          ]
+        }
+      ]
+    }
+  ]
+}

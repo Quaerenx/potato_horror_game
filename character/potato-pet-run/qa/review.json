@@ -1,0 +1,962 @@
+{
+  "ok": true,
+  "frames_root": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames",
+  "errors": [],
+  "warnings": [],
+  "rows": [
+    {
+      "state": "idle",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\idle\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21653,
+          "bbox": [
+            12,
+            5,
+            180,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 289
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\idle\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21405,
+          "bbox": [
+            13,
+            5,
+            179,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 315
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\idle\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21328,
+          "bbox": [
+            14,
+            5,
+            177,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 296
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\idle\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21298,
+          "bbox": [
+            14,
+            5,
+            177,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 278
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\idle\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21307,
+          "bbox": [
+            13,
+            5,
+            178,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 317
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\idle\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21632,
+          "bbox": [
+            12,
+            5,
+            179,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 319
+        }
+      ]
+    },
+    {
+      "state": "running-right",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22556,
+          "bbox": [
+            8,
+            5,
+            183,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 444
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21709,
+          "bbox": [
+            9,
+            5,
+            182,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 407
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22435,
+          "bbox": [
+            6,
+            5,
+            186,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 434
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 20984,
+          "bbox": [
+            11,
+            5,
+            180,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 373
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22124,
+          "bbox": [
+            8,
+            5,
+            184,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 416
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21032,
+          "bbox": [
+            10,
+            5,
+            182,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 408
+        },
+        {
+          "index": 6,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21007,
+          "bbox": [
+            9,
+            5,
+            182,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 397
+        },
+        {
+          "index": 7,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-right\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21185,
+          "bbox": [
+            10,
+            5,
+            181,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 392
+        }
+      ]
+    },
+    {
+      "state": "running-left",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22556,
+          "bbox": [
+            8,
+            5,
+            183,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 444
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21709,
+          "bbox": [
+            9,
+            5,
+            182,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 407
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22435,
+          "bbox": [
+            6,
+            5,
+            186,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 434
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 20984,
+          "bbox": [
+            11,
+            5,
+            180,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 373
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22124,
+          "bbox": [
+            8,
+            5,
+            184,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 416
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21032,
+          "bbox": [
+            10,
+            5,
+            182,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 408
+        },
+        {
+          "index": 6,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21007,
+          "bbox": [
+            9,
+            5,
+            182,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 397
+        },
+        {
+          "index": 7,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running-left\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21185,
+          "bbox": [
+            10,
+            5,
+            181,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 392
+        }
+      ]
+    },
+    {
+      "state": "waving",
+      "expected_frames": 4,
+      "actual_frames": 4,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waving\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21499,
+          "bbox": [
+            13,
+            5,
+            179,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 236
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waving\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21565,
+          "bbox": [
+            7,
+            5,
+            185,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 242
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waving\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21770,
+          "bbox": [
+            6,
+            5,
+            186,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 230
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waving\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 20960,
+          "bbox": [
+            5,
+            6,
+            187,
+            201
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 223
+        }
+      ]
+    },
+    {
+      "state": "jumping",
+      "expected_frames": 5,
+      "actual_frames": 5,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\jumping\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22551,
+          "bbox": [
+            5,
+            10,
+            187,
+            198
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 404
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\jumping\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19550,
+          "bbox": [
+            5,
+            9,
+            187,
+            198
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 372
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\jumping\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19685,
+          "bbox": [
+            5,
+            11,
+            187,
+            197
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 310
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\jumping\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19494,
+          "bbox": [
+            5,
+            14,
+            187,
+            194
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 334
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\jumping\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 22596,
+          "bbox": [
+            5,
+            10,
+            187,
+            198
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 405
+        }
+      ]
+    },
+    {
+      "state": "failed",
+      "expected_frames": 8,
+      "actual_frames": 8,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19687,
+          "bbox": [
+            21,
+            5,
+            171,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 369
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19642,
+          "bbox": [
+            20,
+            5,
+            171,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 362
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 20407,
+          "bbox": [
+            22,
+            5,
+            169,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 372
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21379,
+          "bbox": [
+            24,
+            5,
+            167,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 344
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21785,
+          "bbox": [
+            23,
+            5,
+            168,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 362
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19708,
+          "bbox": [
+            20,
+            5,
+            171,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 383
+        },
+        {
+          "index": 6,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\06.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19468,
+          "bbox": [
+            21,
+            5,
+            171,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 364
+        },
+        {
+          "index": 7,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\failed\\07.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19438,
+          "bbox": [
+            21,
+            5,
+            170,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 380
+        }
+      ]
+    },
+    {
+      "state": "waiting",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waiting\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21811,
+          "bbox": [
+            18,
+            5,
+            173,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 318
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waiting\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21860,
+          "bbox": [
+            18,
+            5,
+            173,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 319
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waiting\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21849,
+          "bbox": [
+            24,
+            5,
+            167,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 287
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waiting\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21944,
+          "bbox": [
+            25,
+            5,
+            167,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 306
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waiting\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21903,
+          "bbox": [
+            21,
+            5,
+            170,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 300
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\waiting\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 21893,
+          "bbox": [
+            16,
+            5,
+            175,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 310
+        }
+      ]
+    },
+    {
+      "state": "running",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19213,
+          "bbox": [
+            33,
+            5,
+            159,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 233
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19386,
+          "bbox": [
+            32,
+            5,
+            159,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 214
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 18897,
+          "bbox": [
+            34,
+            5,
+            158,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 246
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19206,
+          "bbox": [
+            33,
+            5,
+            158,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 242
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19564,
+          "bbox": [
+            32,
+            5,
+            159,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 195
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\running\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19688,
+          "bbox": [
+            32,
+            5,
+            160,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 196
+        }
+      ]
+    },
+    {
+      "state": "review",
+      "expected_frames": 6,
+      "actual_frames": 6,
+      "extraction_method": "components",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "frames": [
+        {
+          "index": 0,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\review\\00.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19305,
+          "bbox": [
+            32,
+            5,
+            159,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 240
+        },
+        {
+          "index": 1,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\review\\01.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19389,
+          "bbox": [
+            31,
+            5,
+            160,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 273
+        },
+        {
+          "index": 2,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\review\\02.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19071,
+          "bbox": [
+            33,
+            5,
+            158,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 253
+        },
+        {
+          "index": 3,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\review\\03.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19313,
+          "bbox": [
+            32,
+            5,
+            159,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 251
+        },
+        {
+          "index": 4,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\review\\04.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19707,
+          "bbox": [
+            30,
+            5,
+            162,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 258
+        },
+        {
+          "index": 5,
+          "file": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\potato-pet-run\\frames\\review\\05.png",
+          "width": 192,
+          "height": 208,
+          "nontransparent_pixels": 19334,
+          "bbox": [
+            33,
+            5,
+            159,
+            203
+          ],
+          "edge_pixels": 0,
+          "chroma_adjacent_pixels": 241
+        }
+      ]
+    }
+  ]
+}

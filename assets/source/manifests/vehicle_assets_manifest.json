@@ -1,0 +1,138 @@
+{
+  "ok": true,
+  "asset_family": "silver compact sedan game vehicle",
+  "format": "transparent PNG",
+  "style": "semi-realistic 2.5D game vehicle, brand-neutral, no readable text or plates",
+  "grid": {
+    "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-4view-grid-640x360.png",
+    "cell_width": 640,
+    "cell_height": 360,
+    "columns": 4,
+    "rows": 1,
+    "order": [
+      "front-3q",
+      "side",
+      "rear-3q",
+      "opposite-side"
+    ]
+  },
+  "assets": [
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-single.png",
+      "role": "main transparent vehicle sprite",
+      "width": 1479,
+      "height": 661,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        28,
+        28,
+        1451,
+        633
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-single-1024w.png",
+      "role": "scaled main sprite, 1024 px wide",
+      "width": 1024,
+      "height": 458,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        17,
+        17,
+        1006,
+        441
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-single-512w.png",
+      "role": "scaled main sprite, 512 px wide",
+      "width": 512,
+      "height": 229,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        7,
+        7,
+        505,
+        222
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-4view-grid-640x360.png",
+      "role": "4-view sheet with 640x360 cells; order front-3q, side, rear-3q, opposite-side",
+      "width": 2560,
+      "height": 360,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        80,
+        66,
+        2488,
+        316
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-4view-sheet.png",
+      "role": "trimmed 4-view sheet",
+      "width": 2159,
+      "height": 306,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        28,
+        28,
+        2134,
+        278
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-front-3q.png",
+      "role": "individual front three-quarter sprite",
+      "width": 524,
+      "height": 294,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        22,
+        22,
+        524,
+        272
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-side.png",
+      "role": "individual side sprite",
+      "width": 543,
+      "height": 265,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        0,
+        22,
+        543,
+        243
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-rear-3q.png",
+      "role": "individual rear three-quarter sprite",
+      "width": 543,
+      "height": 288,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        0,
+        22,
+        543,
+        266
+      ]
+    },
+    {
+      "path": "C:\\Users\\PP\\Documents\\Codex\\2026-05-20\\8e12a164-a11f-449b-bc5b-94d693551f0b-png\\vehicle-assets\\silver-sedan-opposite-side.png",
+      "role": "individual opposite side sprite",
+      "width": 540,
+      "height": 257,
+      "transparent_corners": true,
+      "nontransparent_bbox": [
+        0,
+        22,
+        518,
+        235
+      ]
+    }
+  ]
+}
