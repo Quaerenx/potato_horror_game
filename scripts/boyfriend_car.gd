@@ -20,12 +20,25 @@ func _ready() -> void:
 	honk.name = "HonkAudio"
 	add_child(honk)
 
-func show_rescue_scene() -> void:
+func show_rescue_scene(show_boyfriend := true) -> void:
 	visible = true
 	car_sprite.modulate = Color.WHITE
 	headlights.visible = true
+	if show_boyfriend:
+		reveal_boyfriend()
+	else:
+		boyfriend_sprite.visible = false
+
+func reveal_boyfriend() -> void:
 	boyfriend_sprite.visible = true
 	boyfriend_sprite.play("waving")
+
+func hide_rescue_scene() -> void:
+	visible = false
+	if is_instance_valid(headlights):
+		headlights.visible = false
+	if is_instance_valid(boyfriend_sprite):
+		boyfriend_sprite.visible = false
 
 func _build_car() -> void:
 	car_sprite = Sprite2D.new()

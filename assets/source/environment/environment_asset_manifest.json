@@ -1,0 +1,120 @@
+{
+  "asset_pack": "environment-polish",
+  "version": 2,
+  "purpose": "Project-local visual sheets and generated background art for bush maze, factory, factory backside, flashlight lighting, store reversal, key-cat animation, and store prop dressing.",
+  "assets": [
+    {
+      "path": "assets/source/environment/bush-maze-tileset.png",
+      "sha256": "741f3c72b80bc5d68022155b7843271b1a3ba3a667147961b084daec0a7c65f6",
+      "bytes": 63784,
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/factory-tileset-obstacles.png",
+      "sha256": "2af83873d33d6a6fdeff552a460d1e88668ad9f6a6f6c9f6ec2844bb2386e781",
+      "bytes": 10547,
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/store-reversal-cutscene-sheet.png",
+      "sha256": "c381929f4450cbcf080d8805f7258ccfe368e6a1251e3c40fc2af2355e045b37",
+      "bytes": 8624,
+      "width": 1024,
+      "height": 256,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/key-cat-animation-spritesheet.png",
+      "sha256": "398f7817f45affeebdee4007a0653f5958a8181f404c5d3c2d47dfef61da175a",
+      "bytes": 5118,
+      "width": 640,
+      "height": 128,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/convenience-store-prop-sheet.png",
+      "sha256": "ec12d0e7d07f7531812ade7b79d8a876a6848f20e05e8963395850538864390c",
+      "bytes": 12628,
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/factory-backside-background.png",
+      "sha256": "6a1d615789b569b31305dfe53f4b2bca4ca9ba7a7a89e48395760271a8e19d97",
+      "bytes": 2629319,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/flashlight-beam-texture.png",
+      "sha256": "721401367e326047a668c434eb97c886f3397e6cecff68f456f06adc22cfd633",
+      "bytes": 1510285,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/flashlight-dust-overlay.png",
+      "sha256": "595c93e99d9fb1a4596ac89e63183899224741f81e489b1c8dc8d5c4e8d2507d",
+      "bytes": 1331913,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "path": "assets/source/environment/flashlight-bush-reveal.png",
+      "sha256": "6be83050fb4ad2e53279e23fe448cd3153f94e1236b392c6d3d32018d6c3a8f8",
+      "bytes": 1535662,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "format": "PNG"
+    }
+  ],
+  "grids": {
+    "bush-maze-tileset.png": {
+      "columns": 8,
+      "rows": 8,
+      "cell_width": 64,
+      "cell_height": 64
+    },
+    "factory-tileset-obstacles.png": {
+      "columns": 8,
+      "rows": 8,
+      "cell_width": 64,
+      "cell_height": 64
+    },
+    "convenience-store-prop-sheet.png": {
+      "columns": 8,
+      "rows": 8,
+      "cell_width": 64,
+      "cell_height": 64
+    },
+    "store-reversal-cutscene-sheet.png": {
+      "columns": 4,
+      "rows": 1,
+      "cell_width": 256,
+      "cell_height": 256
+    },
+    "key-cat-animation-spritesheet.png": {
+      "columns": 5,
+      "rows": 1,
+      "cell_width": 128,
+      "cell_height": 128
+    }
+  }
+}

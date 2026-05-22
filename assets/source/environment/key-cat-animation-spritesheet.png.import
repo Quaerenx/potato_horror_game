@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ymmlipdfy5t"
-path="res://.godot/imported/bite-lunge.png-413c7d840a17ee2909413fcc710329ff.ctex"
+uid="uid://cf88owrgifm47"
+path="res://.godot/imported/key-cat-animation-spritesheet.png-8f9e5e1c3034184fa150a1bc2504cde5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/source/animals/bite-lunge.png"
-dest_files=["res://.godot/imported/bite-lunge.png-413c7d840a17ee2909413fcc710329ff.ctex"]
+source_file="res://assets/source/environment/key-cat-animation-spritesheet.png"
+dest_files=["res://.godot/imported/key-cat-animation-spritesheet.png-8f9e5e1c3034184fa150a1bc2504cde5.ctex"]
 
 [params]
 

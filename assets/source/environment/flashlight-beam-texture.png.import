@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ymmlipdfy5t"
-path="res://.godot/imported/bite-lunge.png-413c7d840a17ee2909413fcc710329ff.ctex"
+uid="uid://dx4t60m4o4n1x"
+path="res://.godot/imported/flashlight-beam-texture.png-f11bcdb7195999463e816bff02d1e9ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/source/animals/bite-lunge.png"
-dest_files=["res://.godot/imported/bite-lunge.png-413c7d840a17ee2909413fcc710329ff.ctex"]
+source_file="res://assets/source/environment/flashlight-beam-texture.png"
+dest_files=["res://.godot/imported/flashlight-beam-texture.png-f11bcdb7195999463e816bff02d1e9ea.ctex"]
 
 [params]
 

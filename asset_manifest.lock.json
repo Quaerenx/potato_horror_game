@@ -1,7 +1,7 @@
 {
-  "asset_lock_version": 4,
+  "asset_lock_version": 6,
   "purpose": "Asset lock for the Godot short horror game. Source pixels for provided character/car/creature assets must not be edited, redrawn, regenerated, cropped, stretched, recolored, mirrored, rotated, or retouched.",
-  "source_policy": "Current character/ files are source of truth for provided assets; project uses byte-for-byte copies under assets/source/. The convenience store PNG is a generated project asset and is locked by hash after chroma-key removal. Provided Baekgu protector dog assets are copied byte-for-byte and locked by hash.",
+  "source_policy": "Current character/ files are source of truth for provided assets; project uses byte-for-byte copies under assets/source/. The convenience store PNG is a generated project asset and is locked by hash after chroma-key removal. Provided Baekgu protector dog assets are copied byte-for-byte and locked by hash. Generated environment and flashlight lighting assets are locked by hash after project import.",
   "character_sheet_grid": {
     "columns": 8,
     "rows": 9,
@@ -141,6 +141,123 @@
       "height": 724,
       "mode": "RGB",
       "format": "PNG"
+    },
+    {
+      "key": "animals_key_cat_single_png",
+      "description": "Locked provided key-cat project asset used for the post-factory convenience-store key story beat.",
+      "path": "assets/source/animals/key-cat-single.png",
+      "sha256": "39c97116036c8a8ef0a7e0871caf0bdc36e0d14175790f5d4a016aee854d09bd",
+      "bytes": 1149677,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_bush_maze_tileset_png",
+      "description": "Locked project environment polish sheet for the post-factory bush maze path, walls, leaves, dead ends, and footprints.",
+      "path": "assets/source/environment/bush-maze-tileset.png",
+      "sha256": "741f3c72b80bc5d68022155b7843271b1a3ba3a667147961b084daec0a7c65f6",
+      "bytes": 63784,
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_factory_tileset_obstacles_png",
+      "description": "Locked project environment polish sheet for factory floor tiles, hazards, machinery, crates, shelves, drums, pallets, and sparks.",
+      "path": "assets/source/environment/factory-tileset-obstacles.png",
+      "sha256": "2af83873d33d6a6fdeff552a460d1e88668ad9f6a6f6c9f6ec2844bb2386e781",
+      "bytes": 10547,
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_store_reversal_cutscene_sheet_png",
+      "description": "Locked project cutscene sheet for the wrong-key reveal, door lock, headlight warning, and car impact effects.",
+      "path": "assets/source/environment/store-reversal-cutscene-sheet.png",
+      "sha256": "c381929f4450cbcf080d8805f7258ccfe368e6a1251e3c40fc2af2355e045b37",
+      "bytes": 8624,
+      "width": 1024,
+      "height": 256,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_key_cat_animation_spritesheet_png",
+      "description": "Locked project key-cat animation sheet used for idle, approach, key sniff, and startled states.",
+      "path": "assets/source/environment/key-cat-animation-spritesheet.png",
+      "sha256": "398f7817f45affeebdee4007a0653f5958a8181f404c5d3c2d47dfef61da175a",
+      "bytes": 5118,
+      "width": 640,
+      "height": 128,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_convenience_store_prop_sheet_png",
+      "description": "Locked project convenience-store prop sheet for entrance props, CCTV, shelves, counter dressing, sign pieces, and payphone polish.",
+      "path": "assets/source/environment/convenience-store-prop-sheet.png",
+      "sha256": "ec12d0e7d07f7531812ade7b79d8a876a6848f20e05e8963395850538864390c",
+      "bytes": 12628,
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_factory_backside_background_png",
+      "description": "Locked generated project background art for the factory backside transition yard.",
+      "path": "assets/source/environment/factory-backside-background.png",
+      "sha256": "6a1d615789b569b31305dfe53f4b2bca4ca9ba7a7a89e48395760271a8e19d97",
+      "bytes": 2629319,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_flashlight_beam_texture_png",
+      "description": "Locked generated additive flashlight cone texture used by the player flashlight.",
+      "path": "assets/source/environment/flashlight-beam-texture.png",
+      "sha256": "721401367e326047a668c434eb97c886f3397e6cecff68f456f06adc22cfd633",
+      "bytes": 1510285,
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_flashlight_dust_overlay_png",
+      "description": "Locked generated additive dust and debris texture layered into the player flashlight beam.",
+      "path": "assets/source/environment/flashlight-dust-overlay.png",
+      "sha256": "595c93e99d9fb1a4596ac89e63183899224741f81e489b1c8dc8d5c4e8d2507d",
+      "bytes": 1331913,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_flashlight_bush_reveal_png",
+      "description": "Locked generated additive bush-path reveal texture used in the post-factory maze.",
+      "path": "assets/source/environment/flashlight-bush-reveal.png",
+      "sha256": "6be83050fb4ad2e53279e23fe448cd3153f94e1236b392c6d3d32018d6c3a8f8",
+      "bytes": 1535662,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "environment_asset_manifest_json",
+      "description": "Locked metadata manifest describing the environment polish sheets, generated backgrounds, flashlight textures, and sprite grids.",
+      "path": "assets/source/environment/environment_asset_manifest.json",
+      "sha256": "5e84a47fef3704ac774b3120e076610f436c31051bdec02756add536e1fb61c3",
+      "bytes": 3524
     },
     {
       "key": "buildings_convenience_store_potato_style_source_png",

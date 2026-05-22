@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ymmlipdfy5t"
-path="res://.godot/imported/bite-lunge.png-413c7d840a17ee2909413fcc710329ff.ctex"
+uid="uid://dbuh1eeoubqcm"
+path="res://.godot/imported/factory-backside-background.png-3b234f875a035c1d025209d501bad8b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/source/animals/bite-lunge.png"
-dest_files=["res://.godot/imported/bite-lunge.png-413c7d840a17ee2909413fcc710329ff.ctex"]
+source_file="res://assets/source/environment/factory-backside-background.png"
+dest_files=["res://.godot/imported/factory-backside-background.png-3b234f875a035c1d025209d501bad8b6.ctex"]
 
 [params]
 

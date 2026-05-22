@@ -320,6 +320,25 @@
 - Verified: `git diff --check` found no whitespace errors; it only reported existing Windows line-ending warnings.
 - Issues: Headless short run still prints the existing non-blocking ObjectDB leak warning on exit. Manual playtest is recommended to judge the Baekgu animation scale/timing in context.
 
+## Checkpoint 25 - Priority environment asset pack
+- Done: Added a deterministic environment asset generator at `tools/generate_environment_assets.py`.
+- Done: Generated five new project-local visual sheets under `assets/source/environment/`: bush maze tiles, factory tiles/obstacles, store reversal cutscene decals, key-cat animation frames, and convenience-store prop dressing.
+- Done: Added `assets/source/environment/environment_asset_manifest.json` with grid, dimensions, bytes, and SHA-256 metadata for the new sheets.
+- Done: Integrated the bush maze tile sheet as visible path, wall, dead-end, and flashlight-leaf decals while keeping the existing collision map intact.
+- Done: Integrated the factory tile/obstacle sheet as concrete floor decals plus machine, crate, conveyor, shelf, drum, and pallet overlays for the 20-second chase arena.
+- Done: Replaced the static key-cat rendering with a five-frame `AnimatedSprite2D` using full 128x128 atlas cells and state animations for approach, sniff, and startled moments.
+- Done: Added store prop sheet overlays for the mat, basket, cart, CCTV, shelf/counter silhouettes, sign strip, and payphone.
+- Done: Added store reversal cutscene decals for the wrong-key drop/scratch beat and car-impact rescue beat.
+- Verified: The generated PNG sheets were visually inspected after creation.
+- Verified: `tools/validate_project.gd` now checks the new environment assets, manifest, and runtime integration strings.
+- Verified: `python -m json.tool` passed for `assets/source/environment/environment_asset_manifest.json`, `data/dialogues.json`, `data/game_config.json`, and `asset_manifest.lock.json`.
+- Verified: `python tools/verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_map_bounds.gd` passed with `MAP_BOUNDS_OK`.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_extended_flow.gd` passed with `EXTENDED_FLOW_OK`.
+- Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` exited successfully.
+- Issues: Manual in-editor visual QA is recommended to tune exact sprite alpha and scale against the camera. A short headless runtime still returns the existing ObjectDB leak warning on exit.
+
 ## Final Summary
 - Implemented: First playable project structure, main scene, player movement, sprint, collision, camera follow, HUD, dialogue UI, interactions, triggers, first chase, one-use spray, locked store reversal, final chase, game over checkpoint restore, boyfriend car rescue, ending screen, asset lock, and validation scripts.
 - Implemented later: New potato-style car, nightmare creature, generated convenience store sprite, left dense foliage, right safety fence, car-road visual separation, and a simplified four-clue convenience-store investigation without the auto-door sensor clue.
