@@ -14,24 +14,28 @@ enum GameStage {
 	SPRAY_USED = 3,
 	STORE_REACHED = 4,
 	FINAL_CHASE = 5,
-	RESCUE = 6,
-	ENDING = 7,
-	GAME_OVER = 8,
+	DOG_INTERVENTION = 6,
+	FACTORY_APPROACH = 7,
+	FACTORY_HIDE = 8,
+	FACTORY_CHASE = 9,
+	EXHAUSTED_ESCAPE = 10,
+	RESCUE = 11,
+	ENDING = 12,
+	GAME_OVER = 13,
 }
 
 const MAX_SPRAY_USES := 1
+const FACTORY_CHASE_DURATION := 40
 const STORE_CLUE_IDS := [
 	"store_receipt",
 	"store_footprints",
 	"store_window",
-	"store_sensor",
 	"store_payphone",
 ]
 const STORE_CLUE_LABELS := {
 	"store_receipt": "영수증",
 	"store_footprints": "발자국",
 	"store_window": "창문/CCTV",
-	"store_sensor": "자동문 센서",
 	"store_payphone": "공중전화",
 }
 
@@ -45,6 +49,8 @@ var checkpoint_stage: int = GameStage.INTRO_HOME
 var store_clues_found := {}
 var store_investigation_started := false
 var store_completion_dialogue_shown := false
+var factory_chase_seconds_left := FACTORY_CHASE_DURATION
+var factory_exit_open := false
 
 func register_main(node: Node) -> void:
 	main_node = node
@@ -81,7 +87,17 @@ func get_objective_for_stage(value: int) -> String:
 		GameStage.STORE_REACHED:
 			return _get_store_objective()
 		GameStage.FINAL_CHASE:
-			return "차 불빛 쪽으로 도망쳐!"
+			return "어둠을 피해 계속 도망쳐!"
+		GameStage.DOG_INTERVENTION:
+			return "백구가 시간을 벌고 있다"
+		GameStage.FACTORY_APPROACH:
+			return "샛길의 폐공장 안으로 도망쳐!"
+		GameStage.FACTORY_HIDE:
+			return "공장 안에 몸을 숨기자"
+		GameStage.FACTORY_CHASE:
+			return _get_factory_chase_objective()
+		GameStage.EXHAUSTED_ESCAPE:
+			return "숨이 차도 멈추지 말자"
 		GameStage.RESCUE:
 			return "차 쪽으로 가자"
 		GameStage.ENDING:
@@ -106,7 +122,7 @@ func handle_interaction(interaction_id: String) -> void:
 			_dialogue_manager().start_dialogue("fridge")
 		"mailbox":
 			_dialogue_manager().start_dialogue("mailbox")
-		"store_receipt", "store_footprints", "store_window", "store_sensor", "store_payphone":
+		"store_receipt", "store_footprints", "store_window", "store_payphone":
 			_handle_store_clue(interaction_id)
 		_:
 			_dialogue_manager().start_lines([
@@ -123,9 +139,7 @@ func _handle_store_clue(interaction_id: String) -> void:
 			return
 		_dialogue_manager().start_dialogue("store_not_ready")
 		return
-	if interaction_id == "store_sensor":
-		_audio_manager().play_sfx("auto_door")
-	elif interaction_id == "store_payphone":
+	if interaction_id == "store_payphone":
 		_audio_manager().play_sfx("phone_ring")
 	var was_new := not store_clues_found.has(interaction_id)
 	store_clues_found[interaction_id] = true
@@ -194,8 +208,20 @@ func handle_trigger(trigger_id: String) -> void:
 		"store_arrival":
 			if stage == GameStage.SPRAY_USED:
 				mark_store_reached()
-		"rescue_zone":
+		"dog_intervention":
 			if stage == GameStage.FINAL_CHASE:
+				start_dog_intervention()
+		"factory_entry":
+			if stage == GameStage.FACTORY_APPROACH:
+				start_factory_hide()
+		"factory_exit":
+			if stage == GameStage.FACTORY_CHASE:
+				if factory_exit_open:
+					start_exhausted_escape()
+				else:
+					show_hint("아직 나갈 수 없어. 조금만 더 버티자.")
+		"rescue_zone":
+			if stage == GameStage.EXHAUSTED_ESCAPE:
 				start_rescue()
 		"ambient_dog_bark":
 			if stage == GameStage.WALK_TO_STORE:
@@ -234,11 +260,83 @@ func mark_store_reached() -> void:
 
 func start_final_chase() -> void:
 	transition_to(GameStage.FINAL_CHASE)
+	factory_exit_open = false
+	factory_chase_seconds_left = FACTORY_CHASE_DURATION
 	_audio_manager().set_bgm_intensity(1.0)
 	if is_instance_valid(main_node):
 		await main_node.prepare_final_chase()
 		_audio_manager().play_sfx("chase_start")
 		main_node.activate_enemy(true)
+
+func start_dog_intervention() -> void:
+	transition_to(GameStage.DOG_INTERVENTION)
+	set_player_locked(true)
+	_audio_manager().play_sfx("dog_bark")
+	_audio_manager().set_bgm_intensity(0.92)
+	if is_instance_valid(main_node):
+		await main_node.run_dog_intervention()
+	_dialogue_manager().start_dialogue("dog_intervention", Callable(self, "start_factory_approach"))
+
+func start_factory_approach() -> void:
+	transition_to(GameStage.FACTORY_APPROACH)
+	set_player_locked(false)
+	if is_instance_valid(main_node):
+		main_node.prepare_factory_approach()
+
+func start_factory_hide() -> void:
+	transition_to(GameStage.FACTORY_HIDE)
+	set_player_locked(true)
+	factory_exit_open = false
+	factory_chase_seconds_left = FACTORY_CHASE_DURATION
+	_audio_manager().set_bgm_intensity(0.86)
+	if is_instance_valid(main_node):
+		main_node.enter_factory_hide()
+	_dialogue_manager().start_dialogue("factory_hide", Callable(self, "start_factory_chase"))
+
+func start_factory_chase() -> void:
+	transition_to(GameStage.FACTORY_CHASE)
+	factory_exit_open = false
+	set_factory_chase_seconds_left(FACTORY_CHASE_DURATION)
+	set_checkpoint("CP_FACTORY", Vector2(-165, -1355), GameStage.FACTORY_CHASE)
+	set_player_locked(true)
+	_audio_manager().set_bgm_intensity(1.0)
+	if is_instance_valid(main_node):
+		await main_node.start_factory_chase_sequence()
+	set_player_locked(false)
+
+func set_factory_chase_seconds_left(seconds_left: int) -> void:
+	factory_chase_seconds_left = clampi(seconds_left, 0, FACTORY_CHASE_DURATION)
+	if stage == GameStage.FACTORY_CHASE:
+		emit_signal("objective_changed", get_objective_for_stage(stage))
+
+func finish_factory_timer() -> void:
+	if stage != GameStage.FACTORY_CHASE or factory_exit_open:
+		return
+	factory_exit_open = true
+	set_factory_chase_seconds_left(0)
+	show_hint("출구 셔터가 열렸다. 지금 나가!")
+	_audio_manager().play_sfx("metal_clang")
+	if is_instance_valid(main_node):
+		main_node.open_factory_exit()
+
+func _get_factory_chase_objective() -> String:
+	if factory_exit_open:
+		return "공장 출구로 탈출하자"
+	return "공장 안에서 40초 버티기 (%02d초)" % factory_chase_seconds_left
+
+func start_exhausted_escape() -> void:
+	transition_to(GameStage.EXHAUSTED_ESCAPE)
+	set_player_locked(true)
+	_audio_manager().set_bgm_intensity(0.92)
+	if is_instance_valid(main_node):
+		await main_node.run_exhausted_escape()
+	_dialogue_manager().start_dialogue("exhausted_escape", Callable(self, "_activate_exhausted_run"))
+
+func _activate_exhausted_run() -> void:
+	set_player_locked(false)
+	_audio_manager().play_sfx("rescue_honk_far")
+	if is_instance_valid(main_node):
+		main_node.start_exhausted_run()
 
 func start_rescue() -> void:
 	transition_to(GameStage.RESCUE)
@@ -272,6 +370,9 @@ func restore_checkpoint() -> void:
 		main_node.restore_checkpoint(checkpoint_position, checkpoint_stage)
 	if stage == GameStage.STORE_REACHED:
 		_update_store_objective()
+	elif stage == GameStage.FACTORY_CHASE:
+		factory_exit_open = false
+		set_factory_chase_seconds_left(FACTORY_CHASE_DURATION)
 
 func _set_bgm_for_stage(value: int) -> void:
 	match value:
@@ -281,6 +382,12 @@ func _set_bgm_for_stage(value: int) -> void:
 			_audio_manager().set_bgm_intensity(0.72)
 		GameStage.FINAL_CHASE:
 			_audio_manager().set_bgm_intensity(1.0)
+		GameStage.DOG_INTERVENTION, GameStage.FACTORY_APPROACH, GameStage.FACTORY_HIDE:
+			_audio_manager().set_bgm_intensity(0.86)
+		GameStage.FACTORY_CHASE:
+			_audio_manager().set_bgm_intensity(1.0)
+		GameStage.EXHAUSTED_ESCAPE:
+			_audio_manager().set_bgm_intensity(0.92)
 		GameStage.RESCUE:
 			_audio_manager().set_bgm_intensity(0.35)
 		GameStage.ENDING:

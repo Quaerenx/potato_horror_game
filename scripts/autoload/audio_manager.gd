@@ -29,6 +29,11 @@ var sfx_specs := {
 	"auto_door": {"duration": 0.20, "frequency": 620.0, "volume": 0.09, "noise": 0.06},
 	"heartbeat": {"duration": 0.28, "frequency": 58.0, "volume": 0.14, "noise": 0.12},
 	"phone_ring": {"duration": 0.70, "frequency": 520.0, "volume": 0.12, "noise": 0.03},
+	"dog_bark": {"duration": 0.24, "frequency": 360.0, "volume": 0.16, "noise": 0.42},
+	"dog_whine": {"duration": 0.38, "frequency": 300.0, "volume": 0.11, "noise": 0.20},
+	"metal_clang": {"duration": 0.36, "frequency": 210.0, "volume": 0.16, "noise": 0.58},
+	"factory_alarm": {"duration": 0.46, "frequency": 720.0, "volume": 0.10, "noise": 0.22},
+	"rescue_honk_far": {"duration": 0.62, "frequency": 390.0, "volume": 0.13, "noise": 0.04},
 }
 
 func _ready() -> void:
@@ -63,12 +68,14 @@ func play_sfx(name: String) -> void:
 	var player: AudioStreamPlayer = sfx_players[name]
 	var spec: Dictionary = sfx_specs[name]
 	player.stop()
+	var stream := AudioStreamGenerator.new()
+	stream.mix_rate = MIX_RATE
+	stream.buffer_length = 0.9
+	player.stream = stream
 	player.play()
 	var playback = player.get_stream_playback()
 	if playback == null:
 		return
-	if playback.has_method("clear_buffer"):
-		playback.clear_buffer()
 	_write_generated_sfx(playback, spec)
 
 func _write_generated_sfx(playback, spec: Dictionary) -> void:

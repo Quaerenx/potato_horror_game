@@ -1,7 +1,7 @@
 {
   "asset_lock_version": 4,
   "purpose": "Asset lock for the Godot short horror game. Source pixels for provided character/car/creature assets must not be edited, redrawn, regenerated, cropped, stretched, recolored, mirrored, rotated, or retouched.",
-  "source_policy": "Current character/ files are source of truth for provided assets; project uses byte-for-byte copies under assets/source/. The convenience store PNG is a generated project asset and is locked by hash after chroma-key removal.",
+  "source_policy": "Current character/ files are source of truth for provided assets; project uses byte-for-byte copies under assets/source/. The convenience store PNG is a generated project asset and is locked by hash after chroma-key removal. Provided Baekgu protector dog assets are copied byte-for-byte and locked by hash.",
   "character_sheet_grid": {
     "columns": 8,
     "rows": 9,
@@ -36,6 +36,112 @@
     "Place headlights, shadows, silhouettes, or interaction effects in separate overlay/runtime nodes; never bake effects into source images."
   ],
   "assets": [
+    {
+      "key": "animals_baekgu_protector_motion_atlas_png",
+      "description": "Locked provided Baekgu protector dog full-cell motion atlas copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/final.",
+      "path": "assets/source/animals/baekgu-protector-motion-atlas.png",
+      "sha256": "921ef1a53e62232003446c97fe06b8e735fd52a361b2af18737e07993e6c7022",
+      "bytes": 4433604,
+      "width": 3584,
+      "height": 3840,
+      "mode": "RGBA",
+      "format": "PNG"
+    },
+    {
+      "key": "animals_baekgu_protector_motion_atlas_webp",
+      "description": "Locked provided Baekgu protector dog full-cell motion atlas copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/final.",
+      "path": "assets/source/animals/baekgu-protector-motion-atlas.webp",
+      "sha256": "5dfc8dc8dd5c644b45bd2583568f96e44b1b8f5d253824ca87e9b7e8b4367d7f",
+      "bytes": 2980432,
+      "width": 3584,
+      "height": 3840,
+      "mode": "RGBA",
+      "format": "WEBP"
+    },
+    {
+      "key": "animals_baekgu_protector_motion_manifest_json",
+      "description": "Locked provided Baekgu protector dog motion manifest copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion.",
+      "path": "assets/source/animals/baekgu-protector-motion-manifest.json",
+      "sha256": "46b5d67dc716bac84a0318e3e3c59d237d99f5e5e0fa62dab5eda731870ab4ab",
+      "bytes": 13412
+    },
+    {
+      "key": "animals_baekgu_protector_single_png",
+      "description": "Locked provided Baekgu protector dog source asset copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/reference.",
+      "path": "assets/source/animals/baekgu-protector-single.png",
+      "sha256": "492a5d026fd920069f59a58041780af9843a167f1701394bd0aed40aed4ce7dd",
+      "bytes": 1614253,
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "animals_bark_warning_png",
+      "description": "Locked provided Baekgu protector dog state asset copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/sources.",
+      "path": "assets/source/animals/bark-warning.png",
+      "sha256": "92492eb39f2e089f6c821661b4d1d482a858395508f1c0cbc38bb5e2b6398ee1",
+      "bytes": 1551046,
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "animals_bite_lunge_png",
+      "description": "Locked provided Baekgu protector dog state asset copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/sources.",
+      "path": "assets/source/animals/bite-lunge.png",
+      "sha256": "f193712595cc022794c570e7ad59cb0b51e72911bac5579d20491251cc162e4d",
+      "bytes": 1308668,
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "animals_guard_block_png",
+      "description": "Locked provided Baekgu protector dog state asset copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/sources.",
+      "path": "assets/source/animals/guard-block.png",
+      "sha256": "f6e3a77b794e0ff0a730b55c8682638914c1cd2ce4140519d02551c6e20f24a1",
+      "bytes": 1408218,
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "animals_hurt_recover_png",
+      "description": "Locked provided Baekgu protector dog state asset copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/sources.",
+      "path": "assets/source/animals/hurt-recover.png",
+      "sha256": "d96a62930e43235113af920b5c7869c88343a19cf9f2b92f372733fb2393992c",
+      "bytes": 1417431,
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "animals_idle_alert_png",
+      "description": "Locked provided Baekgu protector dog state asset copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/sources.",
+      "path": "assets/source/animals/idle-alert.png",
+      "sha256": "4b4172b1904d44d8a5d87c115eb1ea298c05db84008260419da371620180eced",
+      "bytes": 1656260,
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "format": "PNG"
+    },
+    {
+      "key": "animals_run_to_protect_png",
+      "description": "Locked provided Baekgu protector dog state asset copied byte-for-byte from character/potato-style-baekgu-protector-dog-motion/sources.",
+      "path": "assets/source/animals/run-to-protect.png",
+      "sha256": "92e59b5edc37e77d3311150bd71535d0810d111858a99caafc7b22f34f07f0e1",
+      "bytes": 1240041,
+      "width": 2172,
+      "height": 724,
+      "mode": "RGB",
+      "format": "PNG"
+    },
     {
       "key": "buildings_convenience_store_potato_style_source_png",
       "description": "Locked project visual/data asset copied from provided character sources or generated for this project.",
@@ -452,5 +558,15 @@
       "mode": "RGBA",
       "format": "PNG"
     }
-  ]
+  ],
+  "baekgu_motion_atlas_grid": {
+    "columns": 8,
+    "rows": 6,
+    "cell_width": 448,
+    "cell_height": 640,
+    "use_full_cells": true,
+    "do_not_trim_transparent_padding": true,
+    "runtime_path": "assets/source/animals/baekgu-protector-motion-atlas.png",
+    "manifest_path": "assets/source/animals/baekgu-protector-motion-manifest.json"
+  }
 }

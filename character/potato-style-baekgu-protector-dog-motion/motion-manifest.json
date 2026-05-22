@@ -1,0 +1,578 @@
+{
+  "name": "potato-style-baekgu-protector-dog-motion",
+  "role": "protective companion dog that defends the protagonist from the nightmare creature",
+  "reference_images": {
+    "single": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\reference\\baekgu-protector-single.png",
+    "nightmare_creature_reference": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\reference\\nightmare-creature-single.png",
+    "nightmare_creature_motion_contact": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\reference\\nightmare-creature-motion-contact-sheet.png"
+  },
+  "atlas": {
+    "png": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\final\\baekgu-protector-motion-atlas.png",
+    "webp": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\final\\baekgu-protector-motion-atlas.webp",
+    "columns": 8,
+    "rows": 6,
+    "cell_width": 448,
+    "cell_height": 640
+  },
+  "states": [
+    {
+      "name": "idle-alert",
+      "row": 0,
+      "frame_count": 6,
+      "duration_ms": 120,
+      "description": "alert guarding idle",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\frames\\idle-alert",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\previews\\idle-alert.gif"
+    },
+    {
+      "name": "run-to-protect",
+      "row": 1,
+      "frame_count": 8,
+      "duration_ms": 80,
+      "description": "sprinting to intercept the monster",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\frames\\run-to-protect",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\previews\\run-to-protect.gif"
+    },
+    {
+      "name": "guard-block",
+      "row": 2,
+      "frame_count": 8,
+      "duration_ms": 95,
+      "description": "plants body between player and creature",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\frames\\guard-block",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\previews\\guard-block.gif"
+    },
+    {
+      "name": "bark-warning",
+      "row": 3,
+      "frame_count": 6,
+      "duration_ms": 90,
+      "description": "fierce warning bark",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\frames\\bark-warning",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\previews\\bark-warning.gif"
+    },
+    {
+      "name": "bite-lunge",
+      "row": 4,
+      "frame_count": 6,
+      "duration_ms": 85,
+      "description": "protective forward lunge bite",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\frames\\bite-lunge",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\previews\\bite-lunge.gif"
+    },
+    {
+      "name": "hurt-recover",
+      "row": 5,
+      "frame_count": 8,
+      "duration_ms": 110,
+      "description": "hit reaction and heroic recovery",
+      "frames_dir": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\frames\\hurt-recover",
+      "preview_gif": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\previews\\hurt-recover.gif"
+    }
+  ],
+  "qa": {
+    "contact_sheet": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\contact-sheet.png",
+    "previews_dir": "C:\\Users\\PP\\horror\\character\\potato-style-baekgu-protector-dog-motion\\qa\\previews"
+  },
+  "notes": "White Korean Baekgu/Jindo-style protector dog in the same hand-drawn potato-style asset format as the nightmare creature. Transparent atlas cells are ready for game import.",
+  "extraction_log": [
+    {
+      "state": "idle-alert",
+      "scale": 1.0,
+      "frames": [
+        {
+          "frame": 0,
+          "mode": "component",
+          "area": 69956,
+          "bbox": [
+            14,
+            164,
+            359,
+            586
+          ]
+        },
+        {
+          "frame": 1,
+          "mode": "component",
+          "area": 66311,
+          "bbox": [
+            369,
+            179,
+            705,
+            586
+          ]
+        },
+        {
+          "frame": 2,
+          "mode": "component",
+          "area": 63761,
+          "bbox": [
+            725,
+            179,
+            1040,
+            586
+          ]
+        },
+        {
+          "frame": 3,
+          "mode": "component",
+          "area": 64996,
+          "bbox": [
+            1081,
+            179,
+            1408,
+            587
+          ]
+        },
+        {
+          "frame": 4,
+          "mode": "component",
+          "area": 65852,
+          "bbox": [
+            1434,
+            184,
+            1761,
+            588
+          ]
+        },
+        {
+          "frame": 5,
+          "mode": "component",
+          "area": 67399,
+          "bbox": [
+            1796,
+            159,
+            2119,
+            588
+          ]
+        }
+      ]
+    },
+    {
+      "state": "run-to-protect",
+      "scale": 0.98,
+      "frames": [
+        {
+          "frame": 0,
+          "mode": "component",
+          "area": 23099,
+          "bbox": [
+            13,
+            270,
+            247,
+            485
+          ]
+        },
+        {
+          "frame": 1,
+          "mode": "component",
+          "area": 24065,
+          "bbox": [
+            250,
+            262,
+            526,
+            491
+          ]
+        },
+        {
+          "frame": 2,
+          "mode": "component",
+          "area": 24033,
+          "bbox": [
+            567,
+            274,
+            811,
+            492
+          ]
+        },
+        {
+          "frame": 3,
+          "mode": "component",
+          "area": 25194,
+          "bbox": [
+            810,
+            276,
+            1126,
+            490
+          ]
+        },
+        {
+          "frame": 4,
+          "mode": "component",
+          "area": 22873,
+          "bbox": [
+            1136,
+            284,
+            1370,
+            490
+          ]
+        },
+        {
+          "frame": 5,
+          "mode": "component",
+          "area": 25418,
+          "bbox": [
+            1347,
+            281,
+            1660,
+            487
+          ]
+        },
+        {
+          "frame": 6,
+          "mode": "component",
+          "area": 22471,
+          "bbox": [
+            1643,
+            257,
+            1862,
+            483
+          ]
+        },
+        {
+          "frame": 7,
+          "mode": "component",
+          "area": 24570,
+          "bbox": [
+            1856,
+            306,
+            2172,
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "state": "guard-block",
+      "scale": 1.0,
+      "frames": [
+        {
+          "frame": 0,
+          "mode": "component",
+          "area": 38749,
+          "bbox": [
+            7,
+            233,
+            280,
+            517
+          ]
+        },
+        {
+          "frame": 1,
+          "mode": "component",
+          "area": 31453,
+          "bbox": [
+            305,
+            252,
+            595,
+            514
+          ]
+        },
+        {
+          "frame": 2,
+          "mode": "component",
+          "area": 25952,
+          "bbox": [
+            600,
+            283,
+            864,
+            516
+          ]
+        },
+        {
+          "frame": 3,
+          "mode": "component",
+          "area": 31987,
+          "bbox": [
+            860,
+            261,
+            1151,
+            520
+          ]
+        },
+        {
+          "frame": 4,
+          "mode": "component",
+          "area": 33991,
+          "bbox": [
+            1131,
+            237,
+            1428,
+            520
+          ]
+        },
+        {
+          "frame": 5,
+          "mode": "component",
+          "area": 34055,
+          "bbox": [
+            1404,
+            240,
+            1680,
+            521
+          ]
+        },
+        {
+          "frame": 6,
+          "mode": "component",
+          "area": 34232,
+          "bbox": [
+            1662,
+            237,
+            1943,
+            523
+          ]
+        },
+        {
+          "frame": 7,
+          "mode": "component",
+          "area": 31960,
+          "bbox": [
+            1925,
+            255,
+            2172,
+            528
+          ]
+        }
+      ]
+    },
+    {
+      "state": "bark-warning",
+      "scale": 1.0,
+      "frames": [
+        {
+          "frame": 0,
+          "mode": "component",
+          "area": 64004,
+          "bbox": [
+            10,
+            197,
+            356,
+            568
+          ]
+        },
+        {
+          "frame": 1,
+          "mode": "component",
+          "area": 63343,
+          "bbox": [
+            377,
+            207,
+            735,
+            569
+          ]
+        },
+        {
+          "frame": 2,
+          "mode": "component",
+          "area": 63861,
+          "bbox": [
+            737,
+            185,
+            1090,
+            570
+          ]
+        },
+        {
+          "frame": 3,
+          "mode": "component",
+          "area": 61860,
+          "bbox": [
+            1092,
+            210,
+            1438,
+            570
+          ]
+        },
+        {
+          "frame": 4,
+          "mode": "component",
+          "area": 62693,
+          "bbox": [
+            1458,
+            201,
+            1803,
+            570
+          ]
+        },
+        {
+          "frame": 5,
+          "mode": "component",
+          "area": 61578,
+          "bbox": [
+            1800,
+            204,
+            2143,
+            569
+          ]
+        }
+      ]
+    },
+    {
+      "state": "bite-lunge",
+      "scale": 0.98,
+      "frames": [
+        {
+          "frame": 0,
+          "mode": "component",
+          "area": 41683,
+          "bbox": [
+            58,
+            238,
+            377,
+            505
+          ]
+        },
+        {
+          "frame": 1,
+          "mode": "component",
+          "area": 38569,
+          "bbox": [
+            390,
+            230,
+            740,
+            482
+          ]
+        },
+        {
+          "frame": 2,
+          "mode": "component",
+          "area": 37650,
+          "bbox": [
+            744,
+            225,
+            1137,
+            460
+          ]
+        },
+        {
+          "frame": 3,
+          "mode": "component",
+          "area": 39049,
+          "bbox": [
+            1134,
+            210,
+            1507,
+            493
+          ]
+        },
+        {
+          "frame": 4,
+          "mode": "component",
+          "area": 35597,
+          "bbox": [
+            1536,
+            253,
+            1820,
+            518
+          ]
+        },
+        {
+          "frame": 5,
+          "mode": "component",
+          "area": 40054,
+          "bbox": [
+            1841,
+            240,
+            2132,
+            524
+          ]
+        }
+      ]
+    },
+    {
+      "state": "hurt-recover",
+      "scale": 1.0,
+      "frames": [
+        {
+          "frame": 0,
+          "mode": "component",
+          "area": 33681,
+          "bbox": [
+            30,
+            211,
+            305,
+            512
+          ]
+        },
+        {
+          "frame": 1,
+          "mode": "component",
+          "area": 27984,
+          "bbox": [
+            297,
+            304,
+            535,
+            516
+          ]
+        },
+        {
+          "frame": 2,
+          "mode": "component",
+          "area": 27172,
+          "bbox": [
+            546,
+            319,
+            788,
+            512
+          ]
+        },
+        {
+          "frame": 3,
+          "mode": "component",
+          "area": 34041,
+          "bbox": [
+            819,
+            279,
+            1117,
+            518
+          ]
+        },
+        {
+          "frame": 4,
+          "mode": "component",
+          "area": 31554,
+          "bbox": [
+            1117,
+            265,
+            1362,
+            524
+          ]
+        },
+        {
+          "frame": 5,
+          "mode": "component",
+          "area": 36375,
+          "bbox": [
+            1369,
+            238,
+            1630,
+            530
+          ]
+        },
+        {
+          "frame": 6,
+          "mode": "component",
+          "area": 34131,
+          "bbox": [
+            1631,
+            231,
+            1869,
+            531
+          ]
+        },
+        {
+          "frame": 7,
+          "mode": "component",
+          "area": 40356,
+          "bbox": [
+            1872,
+            211,
+            2134,
+            533
+          ]
+        }
+      ]
+    }
+  ]
+}

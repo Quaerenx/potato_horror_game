@@ -226,9 +226,103 @@
 - Verified: `Godot_v4.2.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
 - Issues: A short headless scene run still exits with the existing non-blocking ObjectDB leak warning, so manual feel testing in the editor is recommended.
 
+## Checkpoint 20 — Store clue simplification pass
+- Done: Removed `store_sensor` from the required convenience-store clue sequence.
+- Done: Removed the sensor interaction area, sensor clue glint, and blinking sensor visual so players are no longer led to hunt for it.
+- Done: Reduced the store investigation loop to four clear clues: receipt, footprints, window/CCTV, and payphone.
+- Done: Reworded store arrival/completion dialogue and replaced the random sensor hint with a door-click tension cue.
+- Done: Added validation guards to fail if `store_sensor` is reintroduced in main gameplay scripts or dialogue data.
+- Verified: `python -m json.tool data/dialogues.json` passed.
+- Verified: `python -m json.tool data/game_config.json` passed.
+- Verified: `python tools/verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
+- Verified: Static search for `flip_h`, non-uniform scale assignments, and direct rotation assignments found no matches.
+- Issues: A short headless scene run still prints the existing non-blocking ObjectDB leak warning on exit; manual playtest is recommended for clue readability.
+
+## Checkpoint 21 — Streetlight movement blocker fix
+- Done: Removed the collision body from the dark `OldHouse` scenery beside the streetlight, which could feel like an invisible wall near the reveal area.
+- Done: Kept the visual scenery in place so the streetlight reveal still has a dark background shape, but it no longer blocks player movement.
+- Done: Added a validation guard so the old streetlight-adjacent OldHouse collision is not accidentally restored.
+- Verified: `python tools/verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: `python -m json.tool data/dialogues.json` passed.
+- Verified: Static search for `flip_h`, non-uniform scale assignments, and direct rotation assignments found no matches.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
+- Issues: A short headless scene run still prints the existing non-blocking ObjectDB leak warning on exit; manual playtest around the streetlight is recommended to confirm the walking lane feels clear.
+
+## Checkpoint 22 — Extended final chase with Baekgu and factory survival
+- Done: Expanded the late-game stage flow from immediate car rescue into dog intervention, factory approach, factory hiding, 40-second factory chase, exhausted escape, and final boyfriend car rescue.
+- Done: Added a `Baekgu` scene object that runs in, blocks the monster briefly, and then switches to a wounded state while buying time.
+- Done: Replaced the procedural Baekgu visual with the provided `baekgu-protector-single.png` source asset copied byte-for-byte to `assets/source/animals/` and rendered with a runtime chroma-key shader.
+- Done: Added the Baekgu source asset to `asset_manifest.lock.json`.
+- Done: Added a side-path abandoned factory area with walls, exit shutter, collision obstacles, machines, shelves, crates, and looping routes for a medium-difficulty chase.
+- Done: Added a 40-second factory survival timer; the exit shutter opens only after the timer completes, and the exit trigger stays reusable until it is actually valid.
+- Done: Moved boyfriend rescue to after the factory escape and added an exhausted road segment with reduced player speed and a distant honk cue.
+- Done: Added new dialogue keys `dog_intervention`, `factory_hide`, and `exhausted_escape`, and rewrote the ending around the rushed car pickup and Baekgu injury beat.
+- Done: Added generated SFX specs for dog bark/whine, metal clang, factory alarm, and far rescue honk.
+- Done: Updated validation coverage for Baekgu, factory map, 40-second chase, new stages, new dialogue, and delayed rescue.
+- Done: Added `tools/validate_extended_flow.gd`, which instantiates the main scene and verifies the late-game sequence from final chase through Baekgu, factory chase, exhausted escape, rescue, and ending.
+- Done: Fixed generated SFX playback to attach a fresh `AudioStreamGenerator` per cue, avoiding runtime errors from clearing active or inactive playback buffers.
+- Done: Extended the late-game flow validator to check factory chase balance markers: enemy speed is between walk and sprint speed, and at least seven collision obstacles exist for looping.
+- Verified: `python -m json.tool data/dialogues.json` passed.
+- Verified: `python -m json.tool data/game_config.json` passed.
+- Verified: `python tools/verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: `python -m json.tool asset_manifest.lock.json` passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --import` imported the new Baekgu PNG.
+- Verified: Static search for `flip_h`, non-uniform scale assignments, and direct rotation assignments found no matches.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_extended_flow.gd` passed with `EXTENDED_FLOW_OK`, including delayed rescue, 40-second timer, factory exit opening, exhausted run, car rescue, speed-band, and factory obstacle checks.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
+- Issues: No automated blocker remains. Manual playtest is still useful for feel tuning, but the extended flow validator now covers the requested story sequence, 40-second gate, delayed rescue, speed-band, and factory obstacle structure.
+
+## Checkpoint 23 - Map bounds and immersion object pass
+- Done: Added visible world bounds for the home south edge, safety-fence road divider, upper escape road sides, factory approach funnel, and rescue road north end so players cannot wander far outside meaningful play space.
+- Done: Added roadside detail objects: utility poles, overhead wires, reflector posts, puddles, trash bags, discarded flyer, and a bent road sign.
+- Done: Added convenience-store detail objects: flickering sign strip, dead tubes, window stickers, door mat, shopping basket, cart, and CCTV housing without restoring the removed auto-door sensor clue.
+- Done: Added factory detail objects: warning stripes, locker row, hanging chain, pallets, drum, steam leak, and sparks.
+- Done: Added rescue-area detail objects: tire skid marks, dust haze, headlight mist, and a road sign.
+- Done: Copied Baekgu state assets byte-for-byte from `character/potato-style-baekgu-protector-dog-motion/sources/` into `assets/source/animals/` and locked them in `asset_manifest.lock.json`.
+- Done: Replaced the Baekgu intervention pose swap with state sprites for run, bark, guard, bite, and hurt while keeping uniform runtime scale and runtime chroma-key material.
+- Done: Added `tools/validate_map_bounds.gd` to verify key boundary colliders, detail nodes, and Baekgu state sprites.
+- Verified: `python tools/verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: `python -m json.tool asset_manifest.lock.json`, `data/dialogues.json`, and `data/game_config.json` passed.
+- Verified: Static search for `flip_h`, non-uniform scale assignments, and direct rotation assignments found no matches.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --import` passed and imported the new Baekgu state PNGs.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_map_bounds.gd` passed with `MAP_BOUNDS_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_extended_flow.gd` passed with `EXTENDED_FLOW_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
+- Issues: Headless runs still print the existing non-blocking ObjectDB leak warning on exit. Manual playtest is recommended to tune the feel of the new visible bounds and scenery density.
+
+## Checkpoint 24 - Baekgu final motion atlas pass
+- Done: Copied `character/potato-style-baekgu-protector-dog-motion/final/baekgu-protector-motion-atlas.png` and `.webp` byte-for-byte into `assets/source/animals/`.
+- Done: Copied `character/potato-style-baekgu-protector-dog-motion/motion-manifest.json` byte-for-byte into `assets/source/animals/baekgu-protector-motion-manifest.json`.
+- Done: Added the final Baekgu motion atlas files and motion manifest to `asset_manifest.lock.json`, including an 8x6 full-cell 448x640 atlas grid entry.
+- Done: Replaced the previous static Baekgu state-sprite swap with an `AnimatedSprite2D` built from `AtlasTexture` full-cell regions.
+- Done: Removed the unused procedural Baekgu fallback drawing functions so the in-game Baekgu visual now comes from the supplied atlas asset.
+- Done: Adjusted Baekgu's uniform runtime scale for the 448x640 atlas cells so the dog reads closer to the protagonist's on-screen size.
+- Done: Updated validation scripts to check the Baekgu motion atlas, animation names, frame counts, and full 448x640 atlas regions.
+- Verified: `python tools/verify_asset_lock.py` returned `ASSET_LOCK_OK`.
+- Verified: `python -m json.tool asset_manifest.lock.json`, `data/dialogues.json`, and `data/game_config.json` passed.
+- Verified: Static search for `flip_h`, non-uniform scale assignments, and direct rotation assignments found no matches.
+- Verified: Static search confirmed old static Baekgu state paths and procedural Baekgu fallback functions are no longer present.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --import` passed and imported the final Baekgu motion atlas files.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_project.gd` passed with `VALIDATION_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_map_bounds.gd` passed with `MAP_BOUNDS_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --script res://tools/validate_extended_flow.gd` passed with `EXTENDED_FLOW_OK`.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --check-only --script res://tools/validate_project.gd` passed.
+- Verified: `Godot_v4.6.2-stable_win64_console.exe --headless --path . --quit-after 2` passed.
+- Verified: `git diff --check` found no whitespace errors; it only reported existing Windows line-ending warnings.
+- Issues: Headless short run still prints the existing non-blocking ObjectDB leak warning on exit. Manual playtest is recommended to judge the Baekgu animation scale/timing in context.
+
 ## Final Summary
 - Implemented: First playable project structure, main scene, player movement, sprint, collision, camera follow, HUD, dialogue UI, interactions, triggers, first chase, one-use spray, locked store reversal, final chase, game over checkpoint restore, boyfriend car rescue, ending screen, asset lock, and validation scripts.
-- Implemented later: New potato-style car, nightmare creature, generated convenience store sprite, left dense foliage, right safety fence, and car-road visual separation.
+- Implemented later: New potato-style car, nightmare creature, generated convenience store sprite, left dense foliage, right safety fence, car-road visual separation, and a simplified four-clue convenience-store investigation without the auto-door sensor clue.
 - Validation commands run:
   - `winget install --id GodotEngine.GodotEngine --exact --source winget --accept-source-agreements --accept-package-agreements --disable-interactivity` — installed Godot Engine 4.6.2.
   - `Godot_v4.6.2-stable_win64_console.exe --version` — returned `4.6.2.stable.official.71f334935`.
